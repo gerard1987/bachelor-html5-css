@@ -2,6 +2,7 @@ const componentLocation = "./components/";
 
 document.addEventListener("DOMContentLoaded", () => {
   loadComponents();
+  toggleNav();
 });
 
 function loadComponents(){
@@ -30,4 +31,15 @@ function renderComponent(component) {
   catch (error) {
     console.error(error.message);
   }
+}
+
+function toggleNav(){
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+      toggle.setAttribute('aria-label', isOpen ? 'Close main menu' : 'Open main menu');
+    });
 }
