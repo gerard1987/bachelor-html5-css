@@ -14,14 +14,20 @@ body {
     & header {
         display: grid;
         grid-area: header;
-        grid-column: 2 / 11;
-        grid-template-columns: minmax(20%, 1fr) minmax(60%, 1fr);
+        grid-column: 2 / 11; 
 
         & .menu-toggle {
             font-size: 1.6rem;
             background: none;
             border: none;
             cursor: pointer;
+        }
+
+        & .main-nav {
+
+            a.active{
+                font-weight: bold;
+            }
         }
     }
 
@@ -78,25 +84,23 @@ body {
 
         position: relative;
 
-        & .menu-toggle {
-            display: flex;
-            justify-self: flex-end;
+        & .logo {
+            text-align: center;
         }
 
         & .main-nav {
             display: none;
             position: absolute;
             inline-size: 100%;
-            margin-inline: 10px;
-            margin-block: 50px;
+            margin-block: 120px;
             background: white;
             flex-direction: column;
             padding: 1rem;
             border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 
             & a {
-                padding: 0.5rem 0;
+                block-size: 30px;
             }
         }
 
@@ -109,13 +113,14 @@ body {
 @media screen and (min-width: 768px ){
 
     header {
+        grid-template-columns: minmax(20%, 1fr) minmax(80%, 1fr);
         & .menu-toggle {
             display: none;
         }
 
         & .main-nav {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: flex-end;
             position: relative;
             inline-size: auto;
             background: none;
@@ -123,6 +128,12 @@ body {
             padding: 0px;
             margin-block: 0px;
             box-shadow: none;
+            align-items: center;
+
+            & a {
+                inline-size: 8vw;
+                text-align: right;
+            }
         }
     }
 

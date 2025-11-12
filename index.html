@@ -1,55 +1,39 @@
 <!DOCTYPE html>
 <html lang="nl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-</head>
-<body>
-  <header>
-    <span class="logo" aria-hidden="true">
-      <img src="/bestanden/logo.png" width="50" alt="Logo" />
-    </span>
-
-    <button class="menu-toggle" aria-expanded="false" aria-label="Open main menu">
-      ☰
-    </button>
-
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="#">Home</a>
-      <a href="#">Indoor</a>
-      <a href="#">Outdoor</a>
-      <a href="#">Termen</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
-  <main class="index">
-    <section class="banner">
-      <img class="banner-img" src="/bestanden/boulder-banner.png" alt="banner-foto" />
-    </section>
-    <section class="content">
-      <div class="col">Col 1</div>
-      <div class="col">Col 2</div>
-    </section>
-    <section class="gallery">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body>
+    <header class="component" data-component="header"></header>
+    <main class="index">
+      <section class="banner">
+        <img
+          class="banner-img"
+          src="/bestanden/boulder-banner.png"
+          alt="banner-foto"
+        />
+      </section>
+      <section class="content">
+        <div class="col">Col 1</div>
+        <div class="col">Col 2</div>
+      </section>
+      <section class="gallery">
         <div class="col">Col 1</div>
         <div class="col">Col 2</div>
         <div class="col">Col 3</div>
         <div class="col">Col 4</div>
         <div class="col">Col 5</div>
-    </section>
-    <section class="cards">
-      <div class="col">Col 1</div>
-      <div class="col">Col 2</div>
-      <div class="col">Col 3</div>
-    </section>
-  </main>
-  <footer>
-    <div class="container">
-      <div>© 2025<span id="year"></span> Bouldering</div>
-    </div>
-  </footer>
-  <script src="/js/main.js"></script>
-  <link rel="stylesheet" href="./css/main.css">
-</body>
+      </section>
+      <section class="cards">
+        <div class="col">Col 1</div>
+        <div class="col">Col 2</div>
+        <div class="col">Col 3</div>
+      </section>
+    </main>
+    <footer class="component" data-component="footer"></footer>
+    <script src="/js/main.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+  </body>
 </html>
