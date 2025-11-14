@@ -8,6 +8,8 @@
     --main-fg-color-hover:#D4A754;
     --main-fg-color-active:#B58A3E;
     --main-fg-color-visited:#C19E62;
+
+    --card-bg-color:#5b795e;
 }
 
 a:active {
@@ -20,6 +22,13 @@ a:visited {
 
 a:hover {
     color: var(--main-fg-color-hover);
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    padding: 12px;
+    box-shadow: 2px 2px 6px #59815d;
+    border: 1px solid #59815d;
 }
 
 body {
@@ -146,21 +155,18 @@ body {
         }
 
         & .index {
-            & section.gallery {
-                & img {
-                    object-fit: cover;
-                    object-position: center;
-                    block-size: 100%;
-                    inline-size: 100%;
-                    aspect-ratio: 1 / 1;
-                }
+            & img {
+                object-fit: cover;
+                object-position: center;
+                inline-size: 100%;
+                aspect-ratio: 1 / 1;
+            }
 
-                & video {
-                    block-size: 100%;
-                    inline-size: 100%;
-                    object-fit: cover;
-                    object-position: center;
-                }
+            & video {
+                block-size: 100%;
+                inline-size: 100%;
+                object-fit: cover;
+                object-position: center;
             }
         }
     }
@@ -225,10 +231,6 @@ body {
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             }
 
-            & section.cards {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-
         }
     }
 }
@@ -243,6 +245,10 @@ body {
                 & article {
                     grid-column: auto !important;
                 }
+            }
+
+            & section.cards {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             }
         }
     }
