@@ -2,7 +2,31 @@
   box-sizing: border-box;
 }
 
+:root {
+    --main-bg-color:#4B6E4F;
+    --main-fg-color:#E9C46A;
+    --main-fg-color-hover:#D4A754;
+    --main-fg-color-active:#B58A3E;
+    --main-fg-color-visited:#C19E62;
+}
+
+a:active {
+    color: var(--main-fg-color-active)
+}
+
+a:visited {
+    color: var(--main-fg-color-visited);
+}
+
+a:hover {
+    color: var(--main-fg-color-hover);
+}
+
 body {
+
+    background-color: var(--main-bg-color);
+    color: var(--main-fg-color);
+
     display:grid;
     grid-template-areas:
     "header"
@@ -13,7 +37,7 @@ body {
     font-family: 'Inter', sans-serif;
 
     & h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
+        font-family: 'Montserrat', sans-serif;
     }
     
     & header {
@@ -54,22 +78,12 @@ body {
             "gallery"
             "cards";
         grid-template-columns: repeat(11, 1fr [col-start]);
-        grid-template-rows: repeat(4, 1fr [row-start]);
         gap: 10px 0px;
 
         & section {
             display: grid;
             grid-column: 1 / 12;
             gap: 10px;
-
-            & .col {
-                background: gray;
-                border-color: darkgray;
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
         }
 
         & .banner {
@@ -92,7 +106,6 @@ body {
 @media screen and (min-width: 0px ) {
 
     body {
-        grid-template-rows: 15vh 80vh 5vh;
 
         & header {
 
@@ -108,7 +121,7 @@ body {
             .logo:before {
                 content: "Bouldering";
                 position: absolute;
-                color: sandybrown;
+                color: var(--main-fg-color);
                 font-size: 16px;
                 margin-block: 40px;
             }
@@ -131,6 +144,25 @@ body {
                 display: flex;
             }
         }
+
+        & .index {
+            & section.gallery {
+                & img {
+                    object-fit: cover;
+                    object-position: center;
+                    block-size: 100%;
+                    inline-size: 100%;
+                    aspect-ratio: 1 / 1;
+                }
+
+                & video {
+                    block-size: 100%;
+                    inline-size: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
     }
 }
 
@@ -138,12 +170,11 @@ body {
 
     body {
 
-        grid-template-rows: 10vh 80vh 10vh;
-
         & header {
             
             display: grid;
             grid-template-columns: minmax(20%, 1fr) minmax(80%, 1fr);
+            block-size:100px;
 
             & .logo {
                 text-align: left;
@@ -166,27 +197,26 @@ body {
                 align-items: center;
 
                 & a {
-                    inline-size: 8vw;
-                    text-align: right;
+                    padding: 1vw 10px;
                 }
             }
         }
 
         & .index {
             & section.gallery {
-                & .col:nth-child(1) {
+                & article:nth-child(1) {
                     grid-column: 1 / span 4;
                 }
-                & .col:nth-child(2) {
+                & article:nth-child(2) {
                     grid-column: 5 / span 4;
                 }
-                & .col:nth-child(3) {
+                & article:nth-child(3) {
                     grid-column: 9 / span 4;
                 }
-                & .col:nth-child(4) {
+                & article:nth-child(4) {
                     grid-column: 1 / span 6;
                 }
-                & .col:nth-child(5) {
+                & article:nth-child(5) {
                     grid-column: 7 / span 6;
                 }
             }
@@ -210,7 +240,7 @@ body {
 
                 grid-template-columns: repeat(5, 1fr);
                 
-                & .col {
+                & article {
                     grid-column: auto !important;
                 }
             }
