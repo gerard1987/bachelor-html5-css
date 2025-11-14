@@ -4,16 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
     <header class="component" data-component="header"></header>
     <main class="index">
       <section class="banner">
-        <img
-          class="banner-img"
-          src="/bestanden/boulder-banner.png"
-          alt="banner-foto"
-        />
+        <picture>
+          <source media="(width <= 768px)"
+            srcset="./files/images/boulder-banner-mobile.jpg 768w" />
+          <source media="(width <= 1199px)"
+            srcset="./files/images/boulder-banner-tablet.jpg 1000w" />
+          <source media="(width > 1199px)"
+            srcset="./files/images/boulder-banner-desktop.jpg 1920w" />
+          <img src="./files/images/boulder-banner-desktop.jpg" alt="Boulder competition banner image" />
+        </picture>
       </section>
       <section class="content">
         <div class="col">Col 1</div>
