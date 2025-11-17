@@ -1,21 +1,64 @@
 <!DOCTYPE html>
 <html lang="nl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Outdoor Bouldering</title>
-  </head>
-  <body>
-    <header class="component" data-component="header"></header>
-    <main class="main-grid">
-      <div class="container">
-        <section class="col-1-wrapper">
-          <div class="card">CONTENT</div>
-        </section>
-      </div>
-    </main>
-    <footer class="component" data-component="footer"></footer>
-    <script src="../js/main.js"></script>
-    <link rel="stylesheet" href="../css/main.css" />
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Outdoor Bouldering</title>
+</head>
+
+<body>
+  <header class="component" data-component="header"></header>
+
+  <main class="outdoor">
+    <section class="card image-top">
+      <picture>
+        <source media="(width <= 768px)" srcset="../files/images/outdoor_bouldering-mobile.jpg 768w" />
+        <source media="(width <= 1199px)" srcset="../files/images/outdoor_bouldering-tablet.jpg 1000w" />
+        <source media="(width > 1199px)" srcset="../files/images/outdoor_bouldering-desktop.jpg 1920w" />
+        <img src="../files/images/outdoor_bouldering-desktop.jpg" alt="Boulderen op echte rotsen" />
+      </picture>
+    </section>
+
+    <section class="card intro">
+      <article>
+        <h2>Wat is outdoor boulderen?</h2>
+        <p>
+          Outdoor boulderen vindt plaats op natuurlijke rotsblokken in gebieden zoals bossen, bergwanden of valleien. De
+          vormen van de rots, het type gesteente en de natuurlijke structuur zorgen voor unieke bewegingen en
+          uitdagingen die indoors moeilijk na te bootsen zijn. Het terrein kan variëren van glad graniet tot scherpe
+          kalksteen en alles daartussenin.
+        </p>
+        <p>
+          Omdat je buiten klimt, spelen factoren zoals temperatuur, vochtigheid en grip van de rots een grote rol. Dit
+          maakt elke dag anders: dezelfde boulder kan de ene dag makkelijk voelen en de andere dag aanzienlijk
+          moeilijker. De omgeving vraagt bovendien om meer aandacht voor veiligheid, routekeuze en respect voor de
+          natuur.
+        </p>
+      </article>
+    </section>
+
+    <section class="card equipment">
+      <article>
+        <h2>Welke uitrusting heb je nodig?</h2>
+        <p>
+          Voor outdoor boulderen heb je wat meer materiaal nodig dan binnen. Een crashpad is essentieel om veilig te
+          landen op ongelijke ondergrond. Ook is het handig om meerdere pads te gebruiken bij hogere of gevaarlijkere
+          boulders, en soms worden ze gestapeld om rotspunten te bedekken.
+        </p>
+        <p>
+          Verder zijn klimschoenen en magnesium natuurlijk onmisbaar. Veel klimmers nemen ook een borstel mee om grepen
+          schoon te houden, evenals een tarp of matje om schoenen en crashpads droog en zandvrij te houden. Een kleine
+          rugzak met water, snacks en weerbestendige kleding maakt de dag compleet.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="component" data-component="footer"></footer>
+  <script src="../js/main.js"></script>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/outdoor.css" />
+</body>
+
 </html>

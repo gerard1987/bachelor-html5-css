@@ -1,0 +1,16 @@
+.indoor {
+    display: grid;
+    gap: 20px;
+
+    & .intro {
+        grid-column: 1 / span 8;
+    }
+
+    & .image-aside {
+        grid-column: 9 / span 4;
+
+        & img {
+            inline-size: 100%;
+        }
+    }
+}

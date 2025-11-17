@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html lang="nl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Indoor Bouldering</title>
-  </head>
-  <body>
-    <header class="component" data-component="header"></header>
-    <main class="main-grid">
-      <div class="container">
-        <section class="col-1-wrapper">
-          <div class="card">CONTENT</div>
-        </section>
-      </div>
-    </main>
-    <footer class="component" data-component="footer"></footer>
-    <script src="../js/main.js"></script>
-    <link rel="stylesheet" href="../css/main.css" />
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indoor Bouldering</title>
+</head>
+
+<body>
+  <header class="component" data-component="header"></header>
+  <main class="indoor">
+    <section class="card intro">
+      <article>
+        <h2>Wat is indoor boulderen?</h2>
+        <p>
+          Kunstmatige klimwanden worden in klimhallen gebruikt om boulderproblemen zo realistisch mogelijk na te
+          bootsen. Deze wanden worden meestal opgebouwd uit houten panelen, polymeercement, betonnen vormen of zelfs
+          geprefabriceerde structuren die zijn gebaseerd op echte rotswanden. Vervolgens worden kunststof klimgrepen op
+          de wand geschroefd om verschillende routes en uitdagingen te creëren. Sommige boulderproblemen maken gebruik
+          van sterk overhangende delen, waarbij de klimmer veel kracht uit het bovenlichaam moet gebruiken om zichzelf
+          omhoog te bewegen.
+        </p>
+        <p>
+          In klimhallen bevinden zich vaak meerdere boulderproblemen naast elkaar op hetzelfde wandgedeelte. Vroeger was
+          het gebruikelijk om de verschillende routes te onderscheiden met gekleurde tape: één kleur per probleem, zodat
+          klimmers duidelijk konden zien welke grepen bij welke route hoorden. Tegenwoordig worden routes meestal
+          opgebouwd met grepen in dezelfde kleur, wat het overzicht eenvoudiger maakt. Indoor boulderen vraagt weinig
+          uitrusting; met alleen klimschoenen kun je al prima uit de voeten. Wie meer comfort wil, kan aanvullend een
+          chalkbag, wat krijt en een borstel gebruiken.
+        </p>
+      </article>
+    </section>
+    <aside class="card image-aside">
+      <picture>
+        <source media="(width <= 768px)" srcset="./files/images/indoor-comp-mobile.jpg 768w" />
+        <source media="(width <= 1199px)" srcset="../files/images/indoor-comp-tablet.jpg 1000w" />
+        <source media="(width > 1199px)" srcset="../files/images/indoor-comp-desktop.jpg 1920w" />
+        <img src="../files/images/indoor-comp-desktop.jpg" alt="Boulder girl crimping" />
+      </picture>
+    </aside>
+  </main>
+  <footer class="component" data-component="footer"></footer>
+  <script src="../js/main.js"></script>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/indoor.css" />
+</body>
+
 </html>
