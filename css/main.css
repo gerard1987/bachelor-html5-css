@@ -10,6 +10,9 @@
     --main-fg-color-visited: #C19E62;
 
     --card-bg-color: #5b795e;
+
+    --input-bg-color:#efd9b2;
+    --input-fg-color:#a17609;
 }
 
 a:active {
