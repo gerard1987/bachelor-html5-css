@@ -1,107 +1,134 @@
 <!DOCTYPE html>
 <html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact</title>
-</head>
+  <body>
+    <header class="component" data-component="header"></header>
+    <main role="main" aria-labelledby="contact-heading">
+      <section class="map">
+        <gmp-map
+          center="52.611453591703985, 4.6976972960347485"
+          zoom="18"
+          map-id="map"
+          style="min-block-size: 400px"
+        >
+          <gmp-advanced-marker
+            position="52.611453591703985, 4.6976972960347485"
+            title="Heiloo, NL"
+          ></gmp-advanced-marker>
+        </gmp-map>
+      </section>
+      <section class="card" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Neem contact met ons op</h2>
+        <p>
+          Vul onderstaand formulier in en we nemen zo snel mogelijk contact op.
+        </p>
 
-<body>
-  <header class="component" data-component="header"></header>
-  <main role="main" aria-labelledby="contact-heading">
-    <section class="card">
-      <gmp-map center="52.381343963425756, 4.8600293221109085" zoom="18" map-id="map" style="min-block-size:400px;">
-        <gmp-advanced-marker position="52.381343963425756, 4.8600293221109085"
-          title="Ottumwa, IA"></gmp-advanced-marker>
-      </gmp-map>
-    </section>
-    <section class="card" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Neem contact met ons op</h2>
-      <p>Vul onderstaand formulier in en we nemen zo snel mogelijk contact op.</p>
+        <!-- Contact form -->
+        <form
+          id="contactForm"
+          action="https://jkorpela.fi/cgi-bin/echo.cgi"
+          method="post"
+        >
+          <div class="field">
+            <label for="name">Naam</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              autocomplete="name"
+              placeholder="Voor- en achternaam"
+              required 
+            />
+          </div>
 
-      <!-- Contact form -->
-      <form id="contactForm" action="https://jkorpela.fi/cgi-bin/echo.cgi" method="post" novalidate>
+          <div class="field">
+            <label for="email">E‑mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="naam@voorbeeld.nl"
+            />
+          </div>
 
+          <div class="field">
+            <label for="phone">Telefoon (optioneel)</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              inputmode="tel"
+              autocomplete="tel"
+              placeholder="06 12 34 56 78"
+              pattern="^(?:\+31|0)(?:\s|-)?(?:6\d{8}|[1-9]\d(?:\s|-)?\d{6,7})$"
+              maxlength="15"
+            />
+          </div>
 
-        <div class="field">
-          <label for="name">Naam</label>
-          <input type="text" id="name" name="name" required autocomplete="name" placeholder="Voor- en achternaam" />
-        </div>
+          <div class="field">
+            <label for="message">Bericht</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              placeholder="Schrijf hier je bericht... (maximaal 250 tekens)"
+              maxlength="250"
+            ></textarea>
+          </div>
 
+          <div class="field checkbox">
+            <label for="consent">
+              <sub
+                >Ik ga akkoord met het gebruik van mijn gegevens conform de
+                <a href="#">privacypolicy</a>.</sub
+              ></label
+            >
+            <input type="checkbox" id="consent" name="consent" required />
+          </div>
 
-        <div class="field">
-          <label for="email">E‑mail</label>
-          <input type="email" id="email" name="email" required autocomplete="email" placeholder="naam@voorbeeld.nl" />
-        </div>
+          <div class="actions">
+            <button type="submit" alt="Submit form">Verstuur</button>
+          </div>
+        </form>
+      </section>
 
+      <aside class="card contact-info" aria-labelledby="info-heading">
+        <h2 id="info-heading">Onze gegevens</h2>
+        <address>
+          <strong>Bedrijf B.V.</strong><br />
+          Straatnaam 1<br />
+          1234 AB Plaatsnaam<br />
+        </address>
+        <p>
+          Tel: <a href="tel:+31123456789">+31 12 345 6789</a><br />
+          E‑mail: <a href="mailto:info@bedrijf.nl">info@bedrijf.nl</a>
+        </p>
 
-        <div class="field">
-          <label for="phone">Telefoon (optioneel)</label>
-          <input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" />
-        </div>
+        <h3>Openingsuren</h3>
+        <p>Ma — Vr: 09:00 — 17:30<br />Za — Zo: Gesloten</p>
 
-
-        <fieldset class="field" aria-labelledby="reason-legend">
-          <legend id="reason-legend">Onderwerp</legend>
-          <label for="reason">Kies een onderwerp</label>
-          <select id="reason" name="reason">
-            <option value="algemeen">Algemeen</option>
-            <option value="support">Support</option>
-            <option value="offerte">Offerte</option>
-            <option value="overig">Overig</option>
-          </select>
-        </fieldset>
-
-
-        <div class="field">
-          <label for="message">Bericht</label>
-          <textarea id="message" name="message" required placeholder="Schrijf hier je bericht..."></textarea>
-        </div>
-
-
-        <div class="field">
-          <input type="checkbox" id="consent" name="consent" required />
-          <label for="consent">Ik ga akkoord met het gebruik van mijn gegevens conform de <a
-              href="#">privacypolicy</a>.</label>
-        </div>
-
-
-        <div class="actions">
-          <button type="submit">Verstuur</button>
-          <span id="formStatus" role="status" aria-live="polite" style="margin-left:.5rem"></span>
-        </div>
-      </form>
-    </section>
-
-    <aside class="card contact-info" aria-labelledby="info-heading">
-      <h2 id="info-heading">Onze gegevens</h2>
-      <address>
-        <strong>Bedrijf B.V.</strong><br>
-        Straatnaam 1<br>
-        1234 AB Plaatsnaam<br>
-      </address>
-      <p>Tel: <a href="tel:+31123456789">+31 12 345 6789</a><br> E‑mail: <a
-          href="mailto:info@bedrijf.nl">info@bedrijf.nl</a></p>
-
-
-      <h3>Openingsuren</h3>
-      <p>Ma — Vr: 09:00 — 17:30<br>Za — Zo: Gesloten</p>
-
-
-      <h3>Route</h3>
-      <p>Klik op de kaart bovenaan om de exacte locatie te bekijken of gebruik de Google Maps knop om
-        routebeschrijving te starten.</p>
-    </aside>
-  </main>
-  <footer class="component" data-component="footer"></footer>
-  <script src="../js/main.js"></script>
-  <script src="../js/contact.js"></script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=maps,marker"
-    defer></script>
-  <link rel="stylesheet" href="../css/main.css" />
-  <link rel="stylesheet" href="../css/contact.css" />
-</body>
-
+        <h3>Route</h3>
+        <p>
+          Klik op de kaart bovenaan om de exacte locatie te bekijken of gebruik
+          de Google Maps knop om routebeschrijving te starten.
+        </p>
+      </aside>
+    </main>
+    <footer class="component" data-component="footer"></footer>
+    <script src="../js/main.js"></script>
+    <script src="../js/contact.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=maps,marker"
+      defer
+    ></script>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
+  </body>
 </html>

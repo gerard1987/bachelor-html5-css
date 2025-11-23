@@ -43,8 +43,8 @@ function renderComponent(component) {
 }
 
 function setHeaderActiveLink() {
-  document.querySelectorAll(".main-nav > a").forEach((element) => {
-    if (element.pathname == window.location.pathname) {
+  document.querySelectorAll(".main-nav ul li a").forEach((element) => {
+    if (element.pathname.includes(window.location.pathname)) {
       element.classList.add("active");
     }
   });

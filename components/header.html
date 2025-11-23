@@ -1,17 +1,29 @@
-  <header>
-    <span class="logo" aria-hidden="true">
+<header>
+  <span class="logo" aria-hidden="true">
+    <a href="../index.html">
       <img src="/files/images/logo.png" width="50" alt="Logo" />
-    </span>
+    </a>
+  </span>
 
-    <button class="menu-toggle" aria-expanded="false" aria-label="Open main menu">
-      ☰
-    </button>
+  <button class="menu-toggle" aria-expanded="false" aria-label="Open main menu">
+    ☰
+  </button>
 
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="../index.html">Home</a>
-      <a href="../pages/indoor.html">Indoor</a>
-      <a href="../pages/outdoor.html">Outdoor</a>
-      <a href="../pages/uitrusting.html">Uitrusting</a>
-      <a href="../pages/contact.html">Contact</a>
-    </nav>
-  </header>
+  <nav class="main-nav" aria-label="Main navigation">
+    <ul>
+      <li>
+        <a href="../index.html">Home</a>
+      </li>
+      <li class="dropdown">
+        <a>Omgevingen</a>
+          <ul>
+            <li><a href="../pages/indoor.html">Indoor</a></li>
+            <li><a href="../pages/outdoor.html">Outdoor</a></li>
+          </ul>
+      </li>
+      <li><a href="../pages/grading.html">Moeilijheidsgraden</a></li>
+      <li><a href="../pages/uitrusting.html">Uitrusting</a></li>
+      <li><a href="../pages/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>

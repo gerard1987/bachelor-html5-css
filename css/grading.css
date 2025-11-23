@@ -1,0 +1,102 @@
+table {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+
+    caption {
+        display: none;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody {
+        display: block;
+
+        tr {
+            display: block;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--main-border-color);
+            border-radius: 8px;
+            background: var(--main-bg-color);
+            text-align: left;
+
+            th,
+            td {
+                display: block;
+                padding: 0.25rem 0;
+
+                &::before {
+                    display: block;
+                    font-weight: 600;
+                    margin-bottom: 2px;
+                }
+            }
+
+            /* Mobile labels */
+            th[scope="row"]::before {
+                content: "V-scale";
+            }
+
+            td:nth-of-type(1)::before {
+                content: "Fontainebleau";
+            }
+
+            td:nth-of-type(2)::before {
+                content: "Difficulty";
+            }
+        }
+    }
+
+    /* Desktop layout */
+    @media (min-width: 768px) {
+        display: table;
+        border-collapse: collapse;
+
+        caption {
+            display: table-caption;
+            margin-bottom: 0.5rem;
+        }
+
+        thead {
+            display: table-header-group;
+
+            th {
+                padding: 0.5rem;
+                text-align: left;
+                border-bottom: 2px solid #333;
+                font-weight: 700;
+            }
+
+            th:first-of-type {
+                text-align: center;
+            }
+        }
+
+        tbody {
+            display: table-row-group;
+
+            tr {
+                display: table-row;
+                background: none;
+                border: none;
+                margin: 0;
+                padding: 0;
+
+                th,
+                td {
+                    display: table-cell;
+                    border-bottom: 1px solid #ddd;
+                    padding: 0.5rem;
+
+                    &::before {
+                        content: none !important;
+                    }
+                }
+            }
+        }
+    }
+}
