@@ -13,6 +13,13 @@
 
   --input-bg-color: #efd9b2;
   --input-fg-color: #a17609;
+
+  --figcaption-color:#b5a274;
+}
+
+html {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr [col-start]);
 }
 
 a {
@@ -30,6 +37,17 @@ a:visited {
 
 a:hover {
   color: var(--main-fg-color-hover);
+}
+
+figure {
+  margin: inherit;
+  display: flex;
+  flex-flow: column;
+
+  & figcaption {
+      color: var(--figcaption-color);
+      font-size: 0.8em;
+  }
 }
 
 .card {
@@ -70,7 +88,7 @@ body {
       cursor: pointer;
     }
 
-    & .main-nav {
+    & nav {
       a.active {
         color: var(--main-fg-color-active);
         font-weight: bold;
@@ -123,7 +141,7 @@ body {
 
 @media screen and (min-width: 0px) {
   body {
-    padding: 0px 30px;
+    grid-column: 2 / span 10;
 
     & header {
       position: relative;
@@ -143,7 +161,7 @@ body {
         margin-block: 40px;
       }
 
-      & .main-nav {
+      & nav {
         display: none;
         inline-size: 100%;
         background: white;
@@ -157,7 +175,7 @@ body {
         }
       }
 
-      & .main-nav.open {
+      & nav.open {
         display: flex;
         position: absolute;
         margin-block-start: 90px;
@@ -198,7 +216,7 @@ body {
         display: none;
       }
 
-      & .main-nav {
+      & nav {
         display: flex;
         justify-content: flex-end;
         position: relative;

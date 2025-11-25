@@ -5,11 +5,12 @@ table {
     display: block;
 
     caption {
-        display: none;
+        display: table-row;
     }
 
     thead {
-        display: none;
+        position: absolute;
+        top: -100%;
     }
 
     tbody {
@@ -28,6 +29,7 @@ table {
             td {
                 display: block;
                 padding: 0.25rem 0;
+                font-weight: 300;
 
                 &::before {
                     display: block;
@@ -46,7 +48,7 @@ table {
             }
 
             td:nth-of-type(2)::before {
-                content: "Difficulty";
+                content: "Moeilijkheidsgraad";
             }
         }
     }
@@ -58,7 +60,12 @@ table {
 
         caption {
             display: table-caption;
-            margin-bottom: 0.5rem;
+        }
+
+
+        thead {
+            position: relative;
+            top: auto;
         }
 
         thead {

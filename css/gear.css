@@ -19,15 +19,6 @@
     & section {
       grid-column: 1 / span 12;
     }
-
-    & section:nth-child(n+3) {
-      & img {
-        float: left;
-        max-block-size: 25vw;
-        border-radius: 5px;
-        margin: 5px;
-      }
-    }
   }
 }
 
@@ -61,6 +52,27 @@
 
     & section:nth-child(n+3) {
       grid-column: 1 / span 12;
+    }
+
+    section:last-of-type {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+
+        & article {
+          p {
+            margin-inline-end: 1em;
+          }
+        }
+
+        & aside {
+          grid-column: 2;
+          display: flex;
+          align-items: center;
+
+          & img {
+            object-fit: contain;
+          }
+        }
     }
   }
 }
