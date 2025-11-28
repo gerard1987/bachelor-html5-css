@@ -1,94 +1,91 @@
-main {
-  display: grid;
-  gap: 1.25rem;
-}
+form {
+  & label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
 
-.form-card {
-  padding: 1rem;
-}
+  & input,
+  & textarea,
+  & select {
+    padding: 0.6rem;
+    border: 1px solid var(--input-bg-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: var(--input-bg-color);
+    color: var(--input-fg-color);
+    inline-size: 100%;
+  }
 
-label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.35rem;
-}
+  & input[type="checkbox"] {
+    inline-size: auto;
+  }
 
-input,
-textarea,
-select {
-  padding: 0.6rem;
-  border: 1px solid var(--input-bg-color);
-  border-radius: 8px;
-  font-size: 1rem;
-  background: var(--input-bg-color);
-  color: var(--input-fg-color);
-  inline-size: 100%;
-}
+  & input::placeholder {
+    color: var(--input-fg-color);
+  }
 
-input[type="checkbox"] {
-  inline-size: auto;
-}
+  & textarea {
+    min-height: 140px;
+    resize: vertical;
+  }
 
-input::placeholder {
-  color: var(--input-fg-color);
-}
+  & fieldset {
+    border: none;
+    margin: 0px;
+    padding-block: 10px 0px;
+    padding-inline: 0px;
+  }
 
-textarea {
-  min-height: 140px;
-  resize: vertical;
-}
+  .checkbox {
+    display: flex;
+    font-size: 0.8rem;
+  }
 
-.field {
-  margin-bottom: 0.85rem;
-}
+  button {
+    color: var(--input-fg-color);
+    padding: 0.65rem 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--input-bg-color);
+    border: 1px solid var(--input-fg-color);
+  }
 
-.checkbox {
-  display: flex;
-  font-size: 0.8rem;
-}
-
-button {
-  color: var(--input-fg-color);
-  padding: 0.65rem 1rem;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  background: var(--input-bg-color);
-  border: 1px solid var(--input-fg-color);
-}
-
-button:hover {
+  button:hover {
     background: var(--main-bg-color);
+  }
+
+  button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 }
 
-button[disabled] {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
+@media screen and (min-width: 0px) {
+  .contact {
+    gap: 1.25rem;
 
-.contact-info {
-  padding: 1rem;
-}
-
-@media screen and (min-width: 768px) {
-  main {
-    & section:first-of-type {
-      grid-column: 1 / 12;
-    }
-
-    & section:not(:first-of-type) {
-      grid-column: 1 / 6;
-    }
-
-    & aside {
-      grid-column: 6 / 12;
+    & section {
+      grid-column: 1 / -1;
     }
   }
 }
 
-@media screen and (min-width: 1024px) {
-  main {
-    display: grid;
-    gap: 1.25rem;
+@media screen and (min-width: 768px) {
+  .contact {
+    & section:first-of-type {
+      grid-column: 1 / -1;
+    }
+
+    .container {
+      & section:first-of-type {
+        grid-column: 1 / 8;
+      }
+
+      & section:last-of-type {
+        grid-column: 8 / -1;
+      }
+    }
   }
 }

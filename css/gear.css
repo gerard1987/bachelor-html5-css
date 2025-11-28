@@ -1,9 +1,5 @@
 @media screen and (min-width: 0px) {
   .gear {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(11, 1fr);
-
     & aside {
       grid-column: 1 / span 12;
 
