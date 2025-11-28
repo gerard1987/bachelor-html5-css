@@ -14,6 +14,9 @@
   --input-bg-color: #efd9b2;
   --input-fg-color: #a17609;
 
+  --article-link-color: #6b4400;
+  --article-link-hover: #020202;
+  --article-link-visited: #b1935f;
   --figcaption-color: #b5a274;
 }
 
@@ -69,6 +72,22 @@ body {
   h2,
   h3 {
     font-family: "Montserrat", sans-serif;
+    margin-block-start: 0em;
+  }
+
+  article {
+    a {
+      color: var(--article-link-color);
+      font-weight: bold;
+
+      &:visited {
+        color: var(--article-link-visited);
+      }
+
+      &:hover {
+        color: var(--article-link-hover);
+      }
+    }
   }
 
   header {
@@ -111,6 +130,126 @@ body {
       display: grid;
       grid-column: 1 / -1;
       gap: 10px;
+    }
+  }
+
+  .sport {
+    table {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      display: block;
+
+      thead {
+        position: absolute;
+        top: -100%;
+      }
+
+      tbody {
+        display: block;
+
+        tr {
+          display: block;
+          padding: 1rem;
+          margin-bottom: 1rem;
+          border: 1px solid var(--main-border-color);
+          border-radius: 8px;
+          background: var(--main-bg-color);
+          text-align: left;
+
+          th,
+          td {
+            display: block;
+            padding: 0.25rem 0;
+            font-weight: 300;
+
+            &::before {
+              display: block;
+              font-weight: 600;
+              margin-bottom: 2px;
+            }
+          }
+
+          /* Mobile labels */
+          th[scope="row"]::before {
+            content: "V-scale";
+          }
+
+          td:nth-of-type(1)::before {
+            content: "Fontainebleau";
+          }
+
+          td:nth-of-type(2)::before {
+            content: "Moeilijkheidsgraad";
+          }
+        }
+      }
+    }
+  }
+
+  .contact {
+    form {
+      & label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.35rem;
+      }
+
+      & input,
+      & textarea,
+      & select {
+        padding: 0.6rem;
+        border: 1px solid var(--input-bg-color);
+        border-radius: 8px;
+        font-size: 1rem;
+        background: var(--input-bg-color);
+        color: var(--input-fg-color);
+        inline-size: 100%;
+      }
+
+      & input[type="checkbox"] {
+        inline-size: auto;
+      }
+
+      & input::placeholder {
+        color: var(--input-fg-color);
+      }
+
+      & textarea {
+        min-height: 140px;
+        resize: vertical;
+      }
+
+      & fieldset {
+        border: none;
+        margin: 0px;
+        padding-block: 10px 0px;
+        padding-inline: 0px;
+      }
+
+      .checkbox {
+        display: flex;
+        font-size: 0.8rem;
+      }
+
+      button {
+        color: var(--input-fg-color);
+        padding: 0.65rem 1rem;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        background: var(--input-bg-color);
+        border: 1px solid var(--input-fg-color);
+      }
+
+      button:hover {
+        background: var(--main-bg-color);
+      }
+
+      button[disabled] {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
     }
   }
 }
@@ -185,6 +324,8 @@ body {
     }
 
     .index {
+      gap: 1em 0em;
+
       img {
         object-fit: cover;
         object-position: center;
@@ -199,6 +340,78 @@ body {
         object-position: center;
       }
     }
+
+    .indoor {
+      section {
+        grid-column: 1 / -1;
+      }
+
+      aside {
+        grid-column: 1 / -1;
+
+        img {
+          inline-size: 100%;
+          block-size: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .outdoor {
+      section {
+        grid-column: 1 / span 12;
+
+        &:first-of-type {
+          grid-column: 1 / span 12;
+
+          & img {
+            inline-size: 100%;
+            block-size: auto;
+            border-radius: 6px;
+          }
+        }
+      }
+    }
+
+    .sport {
+      section {
+        &:first-of-type {
+          grid-row: 1;
+          grid-column: 1 / -1;
+        }
+
+        &:last-of-type {
+          grid-row: 2;
+          grid-column: 1 / -1
+        }
+      }
+    }
+
+    .gear {
+      aside {
+        grid-column: 1 / span 12;
+
+        img {
+          inline-size: 100%;
+          block-size: 100%;
+          border-radius: 6px;
+          object-fit: cover;
+          min-inline-size: 100%;
+        }
+      }
+
+      section {
+        grid-column: 1 / span 12;
+      }
+    }
+
+    .contact {
+      gap: 1.25rem;
+
+      section {
+        grid-column: 1 / -1;
+      }
+    }
   }
 }
 
@@ -206,7 +419,7 @@ body {
   body {
     header {
       display: grid;
-      grid-template-columns: minmax(20%, 1fr) minmax(80%, 1fr);
+      grid-template-columns: minmax(20%, calc(1024px / 100 * 20)) minmax(80%, calc(1024px / 100 * 80));
       block-size: 100px;
       justify-self: center;
       max-inline-size: 1024px;
@@ -313,23 +526,156 @@ body {
               flex-wrap: nowrap;
               align-items: flex-start;
 
+              &:nth-child(odd) {
+                section {
+                  padding-inline-start: 1em;
+                }
+              }
+
               &:nth-child(2) {
                 flex-direction: row-reverse;
+
+                section {
+                  padding-inline-end: 1em;
+                }
               }
 
               a,
               section {
                 width: 50%;
               }
+            }
+          }
+        }
+      }
+    }
 
-              section {
-                padding: 10px;
+    .indoor {
+      section {
+        &:first-of-type {
+          grid-row: 1;
+          grid-column: 1 / span 7;
+        }
+
+        &:last-of-type {
+          grid-row: 2;
+        }
+      }
+
+      aside {
+        grid-row: 1;
+        grid-column: 8 / -1;
+      }
+    }
+
+    .outdoor {
+      section {
+        &:nth-of-type(1) {
+          & img {
+            inline-size: 100%;
+            block-size: auto;
+            border-radius: 6px;
+          }
+        }
+
+        &:nth-of-type(2) {
+          grid-column: 1 / span 6;
+        }
+
+        &:nth-of-type(3) {
+          grid-column: 7 / span 6;
+        }
+      }
+    }
+
+    .sport {
+      table {
+        display: table;
+        border-collapse: collapse;
+
+
+        thead {
+          position: relative;
+          top: auto;
+        }
+
+        thead {
+          display: table-header-group;
+
+          th {
+            padding: 0.5rem;
+            text-align: left;
+            border-bottom: 2px solid #333;
+            font-weight: 700;
+          }
+
+          th:first-of-type {
+            text-align: center;
+          }
+        }
+
+        tbody {
+          display: table-row-group;
+
+          tr {
+            display: table-row;
+            background: none;
+            border: none;
+            margin: 0;
+            padding: 0;
+
+            th,
+            td {
+              display: table-cell;
+              border-bottom: 1px solid #ddd;
+              padding: 0.5rem;
+
+              &::before {
+                content: none !important;
               }
             }
           }
         }
       }
     }
+
+    .gear {
+
+      aside {
+        grid-column: 1 / span 12;
+      }
+
+      section {
+        &:first-of-type {
+          grid-column: 1 / span 6;
+        }
+
+        &:nth-of-type(2) {
+          grid-column: 7 / span 6;
+        }
+      }
+    }
+
+    .contact {
+      section {
+        &:first-of-type {
+          grid-column: 1 / -1;
+        }
+      }
+
+      .container {
+        section {
+          &:first-of-type {
+            grid-column: 1 / 8;
+          }
+
+          &:last-of-type {
+            grid-column: 8 / -1;
+          }
+        }
+      }
+    }
+
   }
 }
 
@@ -360,13 +706,73 @@ body {
                 display: block;
               }
 
-              section {
-                padding: 0px;
+              &:nth-child(odd) {
+                section {
+                  padding-inline-start: 0em;
+                }
               }
+
+              &:nth-child(2) {
+                section {
+                  padding-inline-end: 0em;
+                }
+              }
+
             }
 
             article:nth-child(2) {
               flex-direction: column;
+            }
+          }
+        }
+      }
+    }
+
+    .sport {
+      section {
+        &:first-of-type {
+          grid-row: 1;
+          grid-column: 1 / 6;
+        }
+
+        &:last-of-type {
+          grid-row: 1;
+          grid-column: 6 / -1
+        }
+      }
+    }
+
+    .gear {
+      aside {
+        grid-column: 1 / span 4;
+      }
+
+      section {
+        &:first-of-type {
+          grid-column: 5 / span 8;
+        }
+
+        &:nth-child(n+3) {
+          grid-column: 1 / span 12;
+        }
+
+        &:last-of-type {
+          display: grid;
+          grid-template-columns: 2fr 1fr;
+
+          & article {
+            p {
+              margin-inline-end: 1em;
+            }
+          }
+
+          & aside {
+            grid-column: 2;
+            display: flex;
+            align-items: center;
+
+            & img {
+              object-fit: contain;
             }
           }
         }
