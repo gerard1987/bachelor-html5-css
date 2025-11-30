@@ -2,14 +2,19 @@
 <html lang="nl">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
   <header class="component" data-component="header"></header>
-  <main role="main" class="contact">
+  <main class="contact">
     <div class="full-width-container">
       <section class="map">
         <gmp-map center="52.611453591703985, 4.6976972960347485" zoom="18" map-id="map" style="min-block-size: 400px">
@@ -29,18 +34,18 @@
         <form id="contactForm" action="https://jkorpela.fi/cgi-bin/echo.cgi" method="post">
           <fieldset>
             <label for="name">Naam</label>
-            <input type="text" id="name" name="name" autocomplete="name" placeholder="Voor- en achternaam" required />
+            <input type="text" id="name" name="name" autocomplete="name" placeholder="Voor- en achternaam" required>
           </fieldset>
 
           <fieldset>
             <label for="email">E‑mail</label>
-            <input type="email" id="email" name="email" required autocomplete="email" placeholder="naam@voorbeeld.nl" />
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="naam@voorbeeld.nl">
           </fieldset>
 
           <fieldset>
             <label for="phone">Telefoon (optioneel)</label>
             <input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78"
-              pattern="^(?:\+31|0)(?:\s|-)?(?:6\d{8}|[1-9]\d(?:\s|-)?\d{6,7})$" maxlength="15" />
+              pattern="^(?:\+31|0)(?:\s|-)?(?:6\d{8}|[1-9]\d(?:\s|-)?\d{6,7})$" maxlength="15">
           </fieldset>
 
           <fieldset>
@@ -53,30 +58,50 @@
             <label for="consent">
               <sub>Ik ga akkoord met het gebruik van mijn gegevens conform de
                 <a href="#">privacypolicy</a>.</sub></label>
-            <input type="checkbox" id="consent" name="consent" required />
+            <input type="checkbox" id="consent" name="consent" required>
           </fieldset>
 
           <fieldset class="actions">
-            <button type="submit" alt="Submit form">Verstuur</button>
+            <button type="submit">Verstuur</button>
           </fieldset>
         </form>
       </section>
 
       <section class="card">
-        <aside aria-labelledby="info-heading">
+        <aside>
           <h2>Onze gegevens</h2>
           <address>
-            <strong>Bedrijf B.V.</strong><br />
-            Straatnaam 1<br />
-            1234 AB Plaatsnaam<br />
+            <strong>Boulderhal Rots B.V.</strong>
+            <p>Dorpstraat 1</p>
+            <p>1234 AB Amsterdam</p>
           </address>
-          <p>
-            Tel: <a href="tel:+31123456789">+31 12 345 6789</a><br />
-            E‑mail: <a href="mailto:info@bedrijf.nl">info@bedrijf.nl</a>
-          </p>
+          <p>Tel: <a href="tel:+31123456789">+31 12 345 6789</a></p>
+          <p>E-mail: <a href="mailto:info@bedrijf.nl">info@boulderhalrots.nl</a></p>
 
           <h3>Openingsuren</h3>
-          <p>Ma — Vr: 09:00 — 17:30<br />Za — Zo: Gesloten</p>
+          <ul>
+            <li>
+              <p>Ma: 09:00 — 17:30 </p>
+            </li>
+            <li>
+              <p>Di: 09:00 — 17:30 </p>
+            </li>
+            <li>
+              <p>Wo: 09:00 — 17:30 </p>
+            </li>
+            <li>
+              <p>Do: 09:00 — 17:30 </p>
+            </li>
+            <li>
+              <p>Vr: 09:00 — 17:30 </p>
+            </li>
+            <li>
+              <p>Za: Gesloten</p>
+            </li>
+            <li>
+              <p>Zo: Gesloten</p>
+            </li>
+          </ul>
 
           <h3>Route</h3>
           <p>
@@ -93,7 +118,7 @@
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=maps,marker"
     defer></script>
-  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/main.css">
 </body>
 
 </html>

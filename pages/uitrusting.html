@@ -2,9 +2,14 @@
 <html lang="nl">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Uitrusting voor Boulderen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -14,10 +19,10 @@
     <div class="container">
       <aside class="card">
         <picture>
-          <source media="(width <= 768px)" srcset="../files/images/climbing_shoes-mobile.jpg 768w" />
-          <source media="(width <= 1199px)" srcset="../files/images/climbing_shoes-tablet.jpg 1000w" />
-          <source media="(width > 1199px)" srcset="../files/images/climbing_shoes-desktop.jpg 1920w" />
-          <img src="../files/images/climbing_shoes-desktop.jpg" alt="Boulder schoenen" />
+          <source media="(width <= 768px)" srcset="../files/images/climbing_shoes-mobile.jpg 768w" sizes="100vw">
+          <source media="(width <= 1199px)" srcset="../files/images/climbing_shoes-tablet.jpg 1000w" sizes="50vw">
+          <source media="(width > 1199px)" srcset="../files/images/climbing_shoes-desktop.jpg 1920w" sizes="33vw">
+          <img src="../files/images/climbing_shoes-desktop.jpg" alt="Boulder schoenen">
         </picture>
       </aside>
 
@@ -79,8 +84,7 @@
 
         <aside>
           <figure>
-            <source media="(width <= 768px)" srcset="../files/images/beastmaker-vinger-training-mobile.jpg 768w" />
-            <img src="../files/images/beastmaker-vinger-training-desktop.jpg" alt="Vinger training" />
+            <img src="../files/images/beastmaker-vinger-training-desktop.jpg" alt="Vinger training">
             <figcaption>Hangboard om vingers te trainen</figcaption>
           </figure>
         </aside>
@@ -91,7 +95,7 @@
   <footer class="component" data-component="footer"></footer>
 
   <script src="../js/main.js"></script>
-  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/main.css">
 </body>
 
 </html>

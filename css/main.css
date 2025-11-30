@@ -23,36 +23,18 @@
 a {
   color: var(--main-fg-color);
   text-decoration: none;
-
-  &:active {
-    color: var(--main-fg-color-active);
-  }
-
-  &:visited {
-    color: var(--main-fg-color-visited);
-  }
-
-  &:hover {
-    color: var(--main-fg-color-hover);
-  }
 }
 
-figure {
-  margin: inherit;
-  display: flex;
-  flex-flow: column;
-
-  figcaption {
-    color: var(--figcaption-color);
-    font-size: 0.8em;
-  }
+a:active {
+  color: var(--main-fg-color-active);
 }
 
-.card {
-  background-color: var(--card-bg-color);
-  padding: 12px;
-  box-shadow: 2px 2px 6px #59815d;
-  border: 1px solid #59815d;
+a:visited {
+  color: var(--main-fg-color-visited);
+}
+
+a:hover {
+  color: var(--main-fg-color-hover);
 }
 
 body {
@@ -64,12 +46,13 @@ body {
     "main"
     "footer";
   font-family: "Inter", sans-serif;
-  font-size: 1em;
   grid-template-columns: repeat(12, 1fr);
   justify-content: center;
   margin: 0em;
 
-  :is(h1, h2, h3) {
+  h1,
+  h2,
+  h3 {
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     margin-block: 0.5em 0em;
@@ -94,26 +77,21 @@ body {
     margin-inline: 0em;
   }
 
-  article {
-    a {
-      color: var(--article-link-color);
-      font-weight: bold;
+  hr {
+    color: var(--main-fg-color);
+    margin-block: 0.5em;
+    margin-inline: auto;
+  }
 
-      &:visited {
-        color: var(--article-link-visited);
-      }
-
-      &:hover {
-        color: var(--article-link-hover);
-      }
-    }
+  ul {
+    list-style: circle;
   }
 
   header {
     grid-area: header;
 
     .menu-toggle {
-      font-size: 1.6rem;
+      font-size: 1.6em;
       background: none;
       border: none;
       cursor: pointer;
@@ -134,6 +112,63 @@ body {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     justify-content: center;
+  }
+
+  .full-width-container {
+    display: grid;
+    grid-column: 1 / -1;
+
+    picture {
+      img {
+        object-fit: cover;
+        inline-size: 100%;
+        block-size: 100%;
+        object-position: center;
+        max-height: 400px;
+      }
+    }
+  }
+
+  .container {
+    display: grid;
+    grid-column: 2 / 12;
+    grid-template-columns: repeat(12, 1fr);
+    justify-self: center;
+    gap: 10px;
+    max-inline-size: 1024px;
+  }
+
+  article {
+    a {
+      color: var(--article-link-color);
+      font-weight: bold;
+
+      &:visited {
+        color: var(--article-link-visited);
+      }
+
+      &:hover {
+        color: var(--article-link-hover);
+      }
+    }
+  }
+
+  figure {
+    margin: inherit;
+    display: flex;
+    flex-flow: column;
+
+    figcaption {
+      color: var(--figcaption-color);
+      font-size: 0.8em;
+    }
+  }
+
+  .card {
+    background-color: var(--card-bg-color);
+    padding: 12px;
+    box-shadow: 2px 2px 6px #59815d;
+    border: 1px solid #59815d;
   }
 
   footer {
@@ -169,8 +204,8 @@ body {
 
         tr {
           display: block;
-          padding: 1rem;
-          margin-bottom: 1rem;
+          padding: 1em;
+          margin-bottom: 1em;
           border: 1px solid var(--main-border-color);
           border-radius: 8px;
           background: var(--main-bg-color);
@@ -208,38 +243,38 @@ body {
 
   .contact {
     form {
-      & label {
+      label {
         display: block;
         font-weight: 600;
-        margin-bottom: 0.35rem;
+        margin-bottom: 0.35em;
       }
 
-      & input,
-      & textarea,
-      & select {
-        padding: 0.6rem;
+      input,
+      textarea,
+      select {
+        padding: 0.6em;
         border: 1px solid var(--input-bg-color);
         border-radius: 8px;
-        font-size: 1rem;
+        font-size: 1em;
         background: var(--input-bg-color);
         color: var(--input-fg-color);
         inline-size: 100%;
       }
 
-      & input[type="checkbox"] {
+      input[type="checkbox"] {
         inline-size: auto;
       }
 
-      & input::placeholder {
+      input::placeholder {
         color: var(--input-fg-color);
       }
 
-      & textarea {
+      textarea {
         min-height: 140px;
         resize: vertical;
       }
 
-      & fieldset {
+      fieldset {
         border: none;
         margin: 0px;
         padding-block: 10px 0px;
@@ -248,12 +283,12 @@ body {
 
       .checkbox {
         display: flex;
-        font-size: 0.8rem;
+        font-size: 0.8em;
       }
 
       button {
         color: var(--input-fg-color);
-        padding: 0.65rem 1rem;
+        padding: 0.65rem 1em;
         border-radius: 10px;
         font-weight: 600;
         cursor: pointer;
@@ -270,31 +305,11 @@ body {
         cursor: not-allowed;
       }
     }
-  }
-}
 
-.full-width-container {
-  display: grid;
-  grid-column: 1 / -1;
-
-  picture {
-    img {
-      object-fit: cover;
-      inline-size: 100%;
-      block-size: 100%;
-      object-position: center;
-      max-height: 400px;
+    address {
+      margin-block-start: 0.5em;
     }
   }
-}
-
-.container {
-  display: grid;
-  grid-column: 2 / 12;
-  grid-template-columns: repeat(12, 1fr);
-  justify-self: center;
-  gap: 10px;
-  max-inline-size: 1024px;
 }
 
 /** Media queries **/
@@ -307,12 +322,12 @@ body {
       flex-direction: column;
       grid-column: 2 / 12;
 
-      .logo {
+      span:first-of-type {
         text-align: center;
         position: relative;
       }
 
-      .logo:before {
+      span:first-of-type:before {
         content: "Bouldering";
         position: absolute;
         color: var(--main-fg-color);
@@ -324,7 +339,7 @@ body {
         display: none;
         inline-size: 100%;
         background: white;
-        padding: 1rem;
+        padding: 1em;
         border-radius: 8px;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
         flex-direction: column;
@@ -425,7 +440,7 @@ body {
     }
 
     .contact {
-      gap: 1.25rem;
+      gap: 1.25em;
 
       section {
         grid-column: 1 / -1;
@@ -443,7 +458,7 @@ body {
       justify-self: center;
       max-inline-size: 1024px;
 
-      .logo {
+      span:first-of-type {
         text-align: left;
       }
 
@@ -639,7 +654,7 @@ body {
           display: table-header-group;
 
           th {
-            padding: 0.5rem;
+            padding: 0.5em;
             text-align: left;
             border-bottom: 2px solid #333;
             font-weight: 700;
@@ -664,7 +679,7 @@ body {
             td {
               display: table-cell;
               border-bottom: 1px solid #ddd;
-              padding: 0.5rem;
+              padding: 0.5em;
 
               &::before {
                 content: none !important;

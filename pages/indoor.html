@@ -2,9 +2,14 @@
 <html lang="nl">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
   <title>Indoor Bouldering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -30,8 +35,10 @@
             waarbij inzicht en techniek minstens zo belangrijk zijn als kracht.
           </p>
         </article>
+        <hr>
         <article>
-          <h3>Boulderetiquette</h2>
+          <h3>Boulderetiquette</h3>
+          <p>Bij indoor boulderen horen ook "ongeschreven" gedragsregels die ervoor zorgen dat iedereen veilig, respectvol en met plezier kan klimmen</p>
           <ul>
             <li>Laat anderen hun poging afmaken.</li>
             <li>Sta niet onder klimmers.</li>
@@ -45,10 +52,10 @@
       </section>
       <aside class="card image-aside">
         <picture>
-          <source media="(width <= 768px)" srcset="../files/images/indoor-comp-mobile.jpg 768w" />
-          <source media="(width <= 1199px)" srcset="../files/images/indoor-comp-tablet.jpg 1000w" />
-          <source media="(width > 1199px)" srcset="../files/images/indoor-comp-desktop.jpg 1920w" />
-          <img src="../files/images/indoor-comp-desktop.jpg" alt="Boulder girl crimping" />
+          <source media="(width <= 768px)" srcset="../files/images/indoor-comp-mobile.jpg 768w" sizes="100vw" >
+          <source media="(width <= 1199px)" srcset="../files/images/indoor-comp-tablet.jpg 1000w" sizes="100vw" >
+          <source media="(width > 1199px)" srcset="../files/images/indoor-comp-desktop.jpg 1920w" sizes="33vw" >
+          <img src="../files/images/indoor-comp-desktop.jpg" alt="Boulder girl crimping" >
         </picture>
       </aside>
       <section class="card">
@@ -110,7 +117,7 @@
   </main>
   <footer class="component" data-component="footer"></footer>
   <script src="../js/main.js"></script>
-  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/main.css" >
 </body>
 
 </html>
