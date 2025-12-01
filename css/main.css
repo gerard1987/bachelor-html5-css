@@ -8,12 +8,9 @@
   --main-fg-color-hover: #d4a754;
   --main-fg-color-active: #b58a3e;
   --main-fg-color-visited: #c19e62;
-
   --card-bg-color: #5b795e;
-
   --input-bg-color: #efd9b2;
   --input-fg-color: #a17609;
-
   --article-link-color: #6b4400;
   --article-link-hover: #020202;
   --article-link-visited: #b1935f;
@@ -41,793 +38,697 @@ body {
   background-color: var(--main-bg-color);
   color: var(--main-fg-color);
   display: grid;
-  grid-template-areas:
-    "header"
-    "main"
-    "footer";
+  grid-template-areas: "header" "main" "footer";
   font-family: "Inter", sans-serif;
   grid-template-columns: repeat(12, 1fr);
   justify-content: center;
   margin: 0em;
+}
 
-  h1,
-  h2,
-  h3 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-    margin-block: 0.5em 0em;
-    margin-inline: 0em;
-  }
+body h1,
+body h2,
+body h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  margin-block: 0.5em 0em;
+  margin-inline: 0em;
+}
 
-  h1 {
-    font-size: 1.8em;
-  }
+body h1 {
+  font-size: 1.8em;
+}
 
-  h2 {
-    font-size: 1.5em;
-  }
+body h2 {
+  font-size: 1.5em;
+}
 
-  h3 {
-    font-size: 1.2em;
-  }
+body h3 {
+  font-size: 1.2em;
+}
 
-  p {
-    font-size: 1em;
-    margin-block: 0.5em;
-    margin-inline: 0em;
-  }
+body p {
+  font-size: 1em;
+  margin-block: 0.5em;
+  margin-inline: 0em;
+}
 
-  hr {
-    color: var(--main-fg-color);
-    margin-block: 0.5em;
-    margin-inline: auto;
-  }
+body hr {
+  color: var(--main-fg-color);
+  margin-block: 0.5em;
+  margin-inline: auto;
+}
 
-  ul {
-    list-style: circle;
-  }
+body ul {
+  list-style: circle;
+}
 
-  header {
-    grid-area: header;
+body header {
+  grid-area: header;
+}
 
-    .menu-toggle {
-      font-size: 1.6em;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
+body header .menu-toggle {
+  font-size: 1.6em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
-    nav {
-      a.active {
-        color: var(--main-fg-color-active);
-        font-weight: bold;
-        text-decoration: underline;
-      }
-    }
-  }
+body header nav a.active {
+  color: var(--main-fg-color-active);
+  font-weight: bold;
+  text-decoration: underline;
+}
 
-  main {
-    grid-area: main;
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    justify-content: center;
-  }
+body main {
+  grid-area: main;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  justify-content: center;
+}
 
-  .full-width-container {
-    display: grid;
-    grid-column: 1 / -1;
+body .full-width-container {
+  display: grid;
+  grid-column: 1 / -1;
+}
 
-    picture {
-      img {
-        object-fit: cover;
-        inline-size: 100%;
-        block-size: 100%;
-        object-position: center;
-        max-height: 400px;
-      }
-    }
-  }
+body .full-width-container picture img {
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+  object-position: center;
+  max-height: 400px;
+}
 
-  .container {
-    display: grid;
-    grid-column: 2 / 12;
-    grid-template-columns: repeat(12, 1fr);
-    justify-self: center;
-    gap: 10px;
-    max-inline-size: 1024px;
-  }
+body .container {
+  display: grid;
+  grid-column: 2 / 12;
+  grid-template-columns: repeat(12, 1fr);
+  justify-self: center;
+  gap: 10px;
+  max-inline-size: 1024px;
+}
 
-  article {
-    a {
-      color: var(--article-link-color);
-      font-weight: bold;
+body article a {
+  color: var(--article-link-color);
+  font-weight: bold;
+}
 
-      &:visited {
-        color: var(--article-link-visited);
-      }
+body article a:visited {
+  color: var(--article-link-visited);
+}
 
-      &:hover {
-        color: var(--article-link-hover);
-      }
-    }
-  }
+body article a:hover {
+  color: var(--article-link-hover);
+}
 
-  figure {
-    margin: inherit;
-    display: flex;
-    flex-flow: column;
+body figure {
+  margin: inherit;
+  display: flex;
+  flex-flow: column;
+}
 
-    figcaption {
-      color: var(--figcaption-color);
-      font-size: 0.8em;
-    }
-  }
+body figure figcaption {
+  color: var(--figcaption-color);
+  font-size: 0.8em;
+}
 
-  .card {
-    background-color: var(--card-bg-color);
-    padding: 12px;
-    box-shadow: 2px 2px 6px #59815d;
-    border: 1px solid #59815d;
-  }
+body .card {
+  background-color: var(--card-bg-color);
+  padding: 12px;
+  box-shadow: 2px 2px 6px #59815d;
+  border: 1px solid #59815d;
+}
 
-  footer {
-    grid-area: footer;
-    grid-column: 2 / 12;
-    display: grid;
-    justify-self: center;
-    grid-template-columns: repeat(1, minmax(150px, 1024px));
-  }
+body footer {
+  grid-area: footer;
+  grid-column: 2 / 12;
+  display: grid;
+  justify-self: center;
+  grid-template-columns: repeat(1, minmax(150px, 1024px));
+}
 
-  .index {
-    section {
-      display: grid;
-      grid-column: 1 / -1;
-      gap: 10px;
-    }
-  }
+body .index section {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: 10px;
+}
 
-  .sport {
-    table {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      display: block;
+body .sport table {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
 
-      thead {
-        position: absolute;
-        top: -100%;
-      }
+body .sport table thead {
+  position: absolute;
+  top: -100%;
+}
 
-      tbody {
-        display: block;
+body .sport table tbody {
+  display: block;
+}
 
-        tr {
-          display: block;
-          padding: 1em;
-          margin-bottom: 1em;
-          border: 1px solid var(--main-border-color);
-          border-radius: 8px;
-          background: var(--main-bg-color);
-          text-align: left;
+body .sport table tbody tr {
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid var(--main-border-color);
+  border-radius: 8px;
+  background: var(--main-bg-color);
+  text-align: left;
+  /* Mobile labels */
+}
 
-          th,
-          td {
-            display: block;
-            padding: 0.25rem 0;
-            font-weight: 300;
+body .sport table tbody tr th,
+body .sport table tbody tr td {
+  display: block;
+  padding: 0.25rem 0;
+  font-weight: 300;
+}
 
-            &::before {
-              display: block;
-              font-weight: 600;
-              margin-bottom: 2px;
-            }
-          }
+body .sport table tbody tr th::before,
+body .sport table tbody tr td::before {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
 
-          /* Mobile labels */
-          th[scope="row"]::before {
-            content: "V-scale";
-          }
+body .sport table tbody tr th[scope="row"]::before {
+  content: "V-scale";
+}
 
-          td:nth-of-type(1)::before {
-            content: "Fontainebleau";
-          }
+body .sport table tbody tr td:nth-of-type(1)::before {
+  content: "Fontainebleau";
+}
 
-          td:nth-of-type(2)::before {
-            content: "Moeilijkheidsgraad";
-          }
-        }
-      }
-    }
-  }
+body .sport table tbody tr td:nth-of-type(2)::before {
+  content: "Moeilijkheidsgraad";
+}
 
-  .contact {
-    form {
-      label {
-        display: block;
-        font-weight: 600;
-        margin-bottom: 0.35em;
-      }
+body .contact form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35em;
+}
 
-      input,
-      textarea,
-      select {
-        padding: 0.6em;
-        border: 1px solid var(--input-bg-color);
-        border-radius: 8px;
-        font-size: 1em;
-        background: var(--input-bg-color);
-        color: var(--input-fg-color);
-        inline-size: 100%;
-      }
+body .contact form input,
+body .contact form textarea,
+body .contact form select {
+  padding: 0.6em;
+  border: 1px solid var(--input-bg-color);
+  border-radius: 8px;
+  font-size: 1em;
+  background: var(--input-bg-color);
+  color: var(--input-fg-color);
+  inline-size: 100%;
+}
 
-      input[type="checkbox"] {
-        inline-size: auto;
-      }
+body .contact form input[type="checkbox"] {
+  inline-size: auto;
+}
 
-      input::placeholder {
-        color: var(--input-fg-color);
-      }
+body .contact form input::placeholder {
+  color: var(--input-fg-color);
+}
 
-      textarea {
-        min-height: 140px;
-        resize: vertical;
-      }
+body .contact form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
 
-      fieldset {
-        border: none;
-        margin: 0px;
-        padding-block: 10px 0px;
-        padding-inline: 0px;
-      }
+body .contact form fieldset {
+  border: none;
+  margin: 0px;
+  padding-block: 10px 0px;
+  padding-inline: 0px;
+}
 
-      .checkbox {
-        display: flex;
-        font-size: 0.8em;
-      }
+body .contact form .checkbox {
+  display: flex;
+  font-size: 0.8em;
+}
 
-      button {
-        color: var(--input-fg-color);
-        padding: 0.65rem 1em;
-        border-radius: 10px;
-        font-weight: 600;
-        cursor: pointer;
-        background: var(--input-bg-color);
-        border: 1px solid var(--input-fg-color);
-      }
+body .contact form button {
+  color: var(--input-fg-color);
+  padding: 0.65rem 1em;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--input-bg-color);
+  border: 1px solid var(--input-fg-color);
+}
 
-      button:hover {
-        background: var(--main-bg-color);
-      }
+body .contact form button:hover {
+  background: var(--main-bg-color);
+}
 
-      button[disabled] {
-        opacity: 0.6;
-        cursor: not-allowed;
-      }
-    }
+body .contact form button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 
-    address {
-      margin-block-start: 0.5em;
-    }
-  }
+body .contact address {
+  margin-block-start: 0.5em;
 }
 
 /** Media queries **/
-
 @media screen and (min-width: 0px) {
-  body {
-    header {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      grid-column: 2 / 12;
+  body header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 / 12;
+  }
 
-      span:first-of-type {
-        text-align: center;
-        position: relative;
-      }
+  body header span:first-of-type {
+    text-align: center;
+    position: relative;
+  }
 
-      span:first-of-type:before {
-        content: "Bouldering";
-        position: absolute;
-        color: var(--main-fg-color);
-        font-size: 16px;
-        margin-block: 40px;
-      }
+  body header span:first-of-type:before {
+    content: "Bouldering";
+    position: absolute;
+    color: var(--main-fg-color);
+    font-size: 16px;
+    margin-block: 40px;
+  }
 
-      nav {
-        display: none;
-        inline-size: 100%;
-        background: white;
-        padding: 1em;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-        flex-direction: column;
+  body header nav {
+    display: none;
+    inline-size: 100%;
+    background: white;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+  }
 
-        a {
-          block-size: 30px;
-        }
-      }
+  body header nav a {
+    block-size: 30px;
+  }
 
-      nav.open {
-        display: flex;
-        position: absolute;
-        margin-block-start: 90px;
-        z-index: 999;
-      }
-    }
+  body header nav.open {
+    display: flex;
+    position: absolute;
+    margin-block-start: 90px;
+    z-index: 999;
+  }
 
-    .index {
-      gap: 1em 0em;
+  body .index {
+    gap: 1em 0em;
+  }
 
-      img {
-        object-fit: cover;
-        object-position: center;
-        inline-size: 100%;
-        aspect-ratio: 1 / 1;
-      }
+  body .index img {
+    object-fit: cover;
+    object-position: center;
+    inline-size: 100%;
+    aspect-ratio: 1 / 1;
+  }
 
-      video {
-        block-size: 100%;
-        inline-size: 100%;
-        object-fit: cover;
-        object-position: center;
-      }
-    }
+  body .index video {
+    block-size: 100%;
+    inline-size: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 
-    .indoor {
-      section {
-        grid-column: 1 / -1;
-      }
+  body .indoor section {
+    grid-column: 1 / -1;
+  }
 
-      aside {
-        grid-column: 1 / -1;
+  body .indoor aside {
+    grid-column: 1 / -1;
+  }
 
-        img {
-          inline-size: 100%;
-          block-size: 100%;
-          object-fit: cover;
-        }
-      }
-    }
+  body .indoor aside img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
 
-    .outdoor {
-      section {
-        grid-column: 1 / span 12;
+  body .outdoor section {
+    grid-column: 1 / span 12;
+  }
 
-        &:first-of-type {
-          grid-column: 1 / span 12;
+  body .outdoor section:first-of-type {
+    grid-column: 1 / span 12;
+  }
 
-          & img {
-            inline-size: 100%;
-            block-size: auto;
-            border-radius: 6px;
-          }
-        }
-      }
-    }
+  body .outdoor section:first-of-type img {
+    inline-size: 100%;
+    block-size: auto;
+    border-radius: 6px;
+  }
 
-    .sport {
-      section {
-        &:first-of-type {
-          grid-row: 1;
-          grid-column: 1 / -1;
-        }
+  body .sport section:first-of-type {
+    grid-row: 1;
+    grid-column: 1 / -1;
+  }
 
-        &:last-of-type {
-          grid-row: 2;
-          grid-column: 1 / -1
-        }
-      }
-    }
+  body .sport section:last-of-type {
+    grid-row: 2;
+    grid-column: 1 / -1;
+  }
 
-    .gear {
-      aside {
-        grid-column: 1 / span 12;
+  body .gear aside {
+    grid-column: 1 / span 12;
+  }
 
-        img {
-          inline-size: 100%;
-          block-size: 100%;
-          border-radius: 6px;
-          object-fit: cover;
-          min-inline-size: 100%;
-        }
-      }
+  body .gear aside img {
+    inline-size: 100%;
+    block-size: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+    min-inline-size: 100%;
+  }
 
-      section {
-        grid-column: 1 / span 12;
-      }
-    }
+  body .gear section {
+    grid-column: 1 / span 12;
+  }
 
-    .contact {
-      gap: 1.25em;
+  body .contact {
+    gap: 1.25em;
+  }
 
-      section {
-        grid-column: 1 / -1;
-      }
-    }
+  body .contact section {
+    grid-column: 1 / -1;
   }
 }
 
 @media screen and (min-width: 768px) {
-  body {
-    header {
-      display: grid;
-      grid-template-columns: minmax(20%, calc(1024px / 100 * 20)) minmax(80%, calc(1024px / 100 * 80));
-      block-size: 100px;
-      justify-self: center;
-      max-inline-size: 1024px;
+  body header {
+    display: grid;
+    grid-template-columns: minmax(20%, calc(1024px / 100 * 20)) minmax(80%, calc(1024px / 100 * 80));
+    block-size: 100px;
+    justify-self: center;
+    max-inline-size: 1024px;
+  }
 
-      span:first-of-type {
-        text-align: left;
-      }
+  body header span:first-of-type {
+    text-align: left;
+  }
 
-      .menu-toggle {
-        display: none;
-      }
+  body header .menu-toggle {
+    display: none;
+  }
 
-      nav {
-        display: flex;
-        justify-content: flex-end;
-        position: relative;
-        inline-size: auto;
-        background: none;
-        flex-direction: row;
-        padding: 0px;
-        margin-block: 0px;
-        box-shadow: none;
-        align-items: center;
+  body header nav {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    inline-size: auto;
+    background: none;
+    flex-direction: row;
+    padding: 0px;
+    margin-block: 0px;
+    box-shadow: none;
+    align-items: center;
+  }
 
-        ul {
-          display: flex;
-          justify-content: space-evenly;
-          list-style: none;
-          padding: 0;
-          margin: 0;
+  body header nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-          li {
-            margin-inline: 10px;
-            block-size: 100%;
-          }
+  body header nav ul li {
+    margin-inline: 10px;
+    block-size: 100%;
+  }
 
-          .dropdown {
-            position: relative;
+  body header nav ul .dropdown {
+    position: relative;
+  }
 
-            ul {
-              position: absolute;
-              display: none;
-              inline-size: 100%;
-              flex-direction: column;
-              z-index: 999;
+  body header nav ul .dropdown ul {
+    position: absolute;
+    display: none;
+    inline-size: 100%;
+    flex-direction: column;
+    z-index: 999;
+  }
 
-              li a {
-                display: block;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-                padding: 5px 10px;
-                background-color: var(--main-bg-color);
-              }
-            }
-          }
+  body header nav ul .dropdown ul li a {
+    display: block;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    padding: 5px 10px;
+    background-color: var(--main-bg-color);
+  }
 
-          .dropdown:hover {
-            ul {
-              display: flex;
-              flex-direction: column;
+  body header nav ul .dropdown:hover ul {
+    display: flex;
+    flex-direction: column;
+  }
 
-              li {
-                margin: 0;
-              }
-            }
-          }
-        }
-      }
-    }
+  body header nav ul .dropdown:hover ul li {
+    margin: 0;
+  }
 
-    .index {
-      .container {
-        section {
-          &:nth-child(1) {
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-          }
+  body .index .container section:nth-child(1) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
 
-          &:nth-child(2) {
-            article {
-              &:nth-child(1) {
-                grid-column: 1 / span 4;
-              }
+  body .index .container section:nth-child(2) article:nth-child(1) {
+    grid-column: 1 / span 4;
+  }
 
-              &:nth-child(2) {
-                grid-column: 5 / span 4;
-              }
+  body .index .container section:nth-child(2) article:nth-child(2) {
+    grid-column: 5 / span 4;
+  }
 
-              &:nth-child(3) {
-                grid-column: 9 / span 4;
-              }
+  body .index .container section:nth-child(2) article:nth-child(3) {
+    grid-column: 9 / span 4;
+  }
 
-              &:nth-child(4) {
-                grid-column: 1 / span 6;
-              }
+  body .index .container section:nth-child(2) article:nth-child(4) {
+    grid-column: 1 / span 6;
+  }
 
-              &:nth-child(5) {
-                grid-column: 7 / span 6;
-              }
-            }
-          }
+  body .index .container section:nth-child(2) article:nth-child(5) {
+    grid-column: 7 / span 6;
+  }
 
-          &:nth-child(3) {
-            article {
-              display: flex;
-              flex-wrap: nowrap;
-              align-items: flex-start;
+  body .index .container section:nth-child(3) article {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
 
-              &:nth-child(odd) {
-                section {
-                  padding-inline-start: 1em;
-                }
-              }
+  body .index .container section:nth-child(3) article:nth-child(odd) section {
+    padding-inline-start: 1em;
+  }
 
-              &:nth-child(2) {
-                flex-direction: row-reverse;
+  body .index .container section:nth-child(3) article:nth-child(2) {
+    flex-direction: row-reverse;
+  }
 
-                section {
-                  padding-inline-end: 1em;
-                }
-              }
+  body .index .container section:nth-child(3) article:nth-child(2) section {
+    padding-inline-end: 1em;
+  }
 
-              a,
-              section {
-                width: 50%;
-              }
+  body .index .container section:nth-child(3) article a,
+  body .index .container section:nth-child(3) article section {
+    width: 50%;
+  }
 
-              a {
-                position: relative;
-              }
+  body .index .container section:nth-child(3) article a {
+    position: relative;
+  }
 
-              a::after {
-                content: "";
-                position: absolute;
-                inset: 0;
-                background: rgba(0, 0, 0, 0.5);
-                opacity: 0;
-                transition: opacity 0.3s ease;
-              }
+  body .index .container section:nth-child(3) article a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 
-              a:hover::after {
-                opacity: 1;
-              }
-            }
-          }
-        }
-      }
-    }
+  body .index .container section:nth-child(3) article a:hover::after {
+    opacity: 1;
+  }
 
-    .indoor {
-      section {
-        &:first-of-type {
-          grid-row: 1;
-          grid-column: 1 / span 7;
-        }
+  body .indoor section:first-of-type {
+    grid-row: 1;
+    grid-column: 1 / span 7;
+  }
 
-        &:last-of-type {
-          grid-row: 2;
-        }
-      }
+  body .indoor section:last-of-type {
+    grid-row: 2;
+  }
 
-      aside {
-        grid-row: 1;
-        grid-column: 8 / -1;
-      }
-    }
+  body .indoor aside {
+    grid-row: 1;
+    grid-column: 8 / -1;
+  }
 
-    .outdoor {
-      section {
-        &:nth-of-type(1) {
-          & img {
-            inline-size: 100%;
-            block-size: auto;
-            border-radius: 6px;
-          }
-        }
+  body .outdoor section:nth-of-type(1) img {
+    inline-size: 100%;
+    block-size: auto;
+    border-radius: 6px;
+  }
 
-        &:nth-of-type(2) {
-          grid-column: 1 / span 6;
-        }
+  body .outdoor section:nth-of-type(2) {
+    grid-column: 1 / span 6;
+  }
 
-        &:nth-of-type(3) {
-          grid-column: 7 / span 6;
-        }
-      }
-    }
+  body .outdoor section:nth-of-type(3) {
+    grid-column: 7 / span 6;
+  }
 
-    .sport {
-      table {
-        display: table;
-        border-collapse: collapse;
+  body .sport table {
+    display: table;
+    border-collapse: collapse;
+  }
 
+  body .sport table thead {
+    position: relative;
+    top: auto;
+  }
 
-        thead {
-          position: relative;
-          top: auto;
-        }
+  body .sport table thead {
+    display: table-header-group;
+  }
 
-        thead {
-          display: table-header-group;
+  body .sport table thead th {
+    padding: 0.5em;
+    text-align: left;
+    border-bottom: 2px solid #333;
+    font-weight: 700;
+  }
 
-          th {
-            padding: 0.5em;
-            text-align: left;
-            border-bottom: 2px solid #333;
-            font-weight: 700;
-          }
+  body .sport table thead th:first-of-type {
+    text-align: center;
+  }
 
-          th:first-of-type {
-            text-align: center;
-          }
-        }
+  body .sport table tbody {
+    display: table-row-group;
+  }
 
-        tbody {
-          display: table-row-group;
+  body .sport table tbody tr {
+    display: table-row;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
 
-          tr {
-            display: table-row;
-            background: none;
-            border: none;
-            margin: 0;
-            padding: 0;
+  body .sport table tbody tr th,
+  body .sport table tbody tr td {
+    display: table-cell;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5em;
+  }
 
-            th,
-            td {
-              display: table-cell;
-              border-bottom: 1px solid #ddd;
-              padding: 0.5em;
+  body .sport table tbody tr th::before,
+  body .sport table tbody tr td::before {
+    content: none !important;
+  }
 
-              &::before {
-                content: none !important;
-              }
-            }
-          }
-        }
-      }
-    }
+  body .gear aside {
+    grid-column: 1 / span 12;
+  }
 
-    .gear {
+  body .gear section:first-of-type {
+    grid-column: 1 / span 6;
+  }
 
-      aside {
-        grid-column: 1 / span 12;
-      }
+  body .gear section:nth-of-type(2) {
+    grid-column: 7 / span 6;
+  }
 
-      section {
-        &:first-of-type {
-          grid-column: 1 / span 6;
-        }
+  body .contact section:first-of-type {
+    grid-column: 1 / -1;
+  }
 
-        &:nth-of-type(2) {
-          grid-column: 7 / span 6;
-        }
-      }
-    }
+  body .contact .container section:first-of-type {
+    grid-column: 1 / 8;
+  }
 
-    .contact {
-      section {
-        &:first-of-type {
-          grid-column: 1 / -1;
-        }
-      }
-
-      .container {
-        section {
-          &:first-of-type {
-            grid-column: 1 / 8;
-          }
-
-          &:last-of-type {
-            grid-column: 8 / -1;
-          }
-        }
-      }
-    }
-
+  body .contact .container section:last-of-type {
+    grid-column: 8 / -1;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  body {
-    .index {
-      .container {
-        section {
-          &:nth-child(2) {
-            grid-template-columns: repeat(5, 1fr);
+  body .index .container section:nth-child(2) {
+    grid-template-columns: repeat(5, 1fr);
+  }
 
-            article {
-              grid-column: auto !important;
-            }
-          }
+  body .index .container section:nth-child(2) article {
+    grid-column: auto !important;
+  }
 
-          &:nth-child(3) {
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  body .index .container section:nth-child(3) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
 
-            article {
-              flex-wrap: wrap;
-              align-items: flex-start;
-              flex-direction: column;
+  body .index .container section:nth-child(3) article {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: column;
+  }
 
-              a,
-              section {
-                width: 100%;
-                display: block;
-              }
+  body .index .container section:nth-child(3) article a,
+  body .index .container section:nth-child(3) article section {
+    width: 100%;
+    display: block;
+  }
 
-              &:nth-child(odd) {
-                section {
-                  padding-inline-start: 0em;
-                }
-              }
+  body .index .container section:nth-child(3) article:nth-child(odd) section {
+    padding-inline-start: 0em;
+  }
 
-              &:nth-child(2) {
-                section {
-                  padding-inline-end: 0em;
-                }
-              }
+  body .index .container section:nth-child(3) article:nth-child(2) section {
+    padding-inline-end: 0em;
+  }
 
-            }
+  body .index .container section:nth-child(3) article:nth-child(2) {
+    flex-direction: column;
+  }
 
-            article:nth-child(2) {
-              flex-direction: column;
-            }
-          }
-        }
-      }
-    }
+  body .sport section:first-of-type {
+    grid-row: 1;
+    grid-column: 1 / 6;
+  }
 
-    .sport {
-      section {
-        &:first-of-type {
-          grid-row: 1;
-          grid-column: 1 / 6;
-        }
+  body .sport section:last-of-type {
+    grid-row: 1;
+    grid-column: 6 / -1;
+  }
 
-        &:last-of-type {
-          grid-row: 1;
-          grid-column: 6 / -1
-        }
-      }
-    }
+  body .gear aside {
+    grid-column: 1 / span 4;
+  }
 
-    .gear {
-      aside {
-        grid-column: 1 / span 4;
-      }
+  body .gear section:first-of-type {
+    grid-column: 5 / span 8;
+  }
 
-      section {
-        &:first-of-type {
-          grid-column: 5 / span 8;
-        }
+  body .gear section:nth-child(n+3) {
+    grid-column: 1 / span 12;
+  }
 
-        &:nth-child(n+3) {
-          grid-column: 1 / span 12;
-        }
+  body .gear section:last-of-type {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
 
-        &:last-of-type {
-          display: grid;
-          grid-template-columns: 2fr 1fr;
+  body .gear section:last-of-type article p {
+    margin-inline-end: 1em;
+  }
 
-          & article {
-            p {
-              margin-inline-end: 1em;
-            }
-          }
+  body .gear section:last-of-type aside {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+  }
 
-          & aside {
-            grid-column: 2;
-            display: flex;
-            align-items: center;
-
-            & img {
-              object-fit: contain;
-            }
-          }
-        }
-      }
-    }
+  body .gear section:last-of-type aside img {
+    object-fit: contain;
   }
 }
