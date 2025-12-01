@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadComponents().then(() => {
     toggleResponsiveNav();
     setHeaderActiveLink();
+    addGalleryListeners();
   });
 });
 
@@ -61,5 +62,31 @@ function toggleResponsiveNav() {
       "aria-label",
       isOpen ? "Close main menu" : "Open main menu"
     );
+  });
+}
+
+function addGalleryListeners() {
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      document.querySelectorAll("section article.expanded")
+        .forEach(a => a.classList.remove("expanded"));
+    }
+  });
+
+  document.querySelectorAll("body .index .container section:nth-child(2) article").forEach(article => {
+    article.addEventListener("click", (e) => {
+      const isExpanded = article.classList.contains("expanded");
+
+      if (isExpanded) {
+        article.classList.remove("expanded");
+        return;
+      }
+
+      document.querySelectorAll("section article.expanded")
+        .forEach(a => a.classList.remove("expanded"));
+
+      article.classList.add("expanded");
+    });
   });
 }

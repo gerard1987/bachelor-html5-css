@@ -293,6 +293,54 @@ body .contact address {
   margin-block-start: 0.5em;
 }
 
+body .index section:nth-of-type(2) article {
+  position: relative;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+body .index section:nth-of-type(2) article img {
+  transition: transform 0.3s ease;
+}
+
+/* fullscreen expanded state */
+body .index section:nth-of-type(2) article.expanded {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 0;
+  margin: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+  overflow: hidden;
+}
+
+/* scale image smoothly */
+body .index section:nth-of-type(2) article.expanded picture img {
+  max-width: 90vw;
+  max-height: 90vh;
+  animation: zoomIn 0.3s ease forwards;
+}
+
+/* default small scale (optional subtle effect) */
+body .index section:nth-of-type(2) article picture img {
+  transform: scale(1);
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.75);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 /** Media queries **/
 @media screen and (min-width: 0px) {
   body header {
