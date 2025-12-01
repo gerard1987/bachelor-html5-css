@@ -11,9 +11,9 @@
   --card-bg-color: #5b795e;
   --input-bg-color: #efd9b2;
   --input-fg-color: #a17609;
-  --article-link-color: #6b4400;
-  --article-link-hover: #020202;
-  --article-link-visited: #b1935f;
+  --article-link-color: #f4d68e;
+  --article-link-hover: #e8c06e;
+  --article-link-visited: #d4a756;
   --figcaption-color: #b5a274;
 }
 
@@ -130,8 +130,9 @@ body .container {
 }
 
 body article a {
-  color: var(--article-link-color);
-  font-weight: bold;
+    color: var(--article-link-color);
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
 }
 
 body article a:visited {
