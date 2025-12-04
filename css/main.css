@@ -13,7 +13,7 @@
   --input-fg-color: #a17609;
   --article-link-color: #f4d68e;
   --article-link-hover: #e8c06e;
-  --article-link-visited: #d4a756;
+  --article-link-visited: #553806;
   --figcaption-color: #b5a274;
 }
 
@@ -131,8 +131,9 @@ body .container {
 
 body article a {
     color: var(--article-link-color);
-    font-weight: bold;
+    font-weight: 600;
     font-family: "Montserrat", sans-serif;
+    text-decoration: underline;
 }
 
 body article a:visited {
@@ -329,6 +330,28 @@ body .index section:nth-of-type(2) article.expanded picture img {
 /* default small scale (optional subtle effect) */
 body .index section:nth-of-type(2) article picture img {
   transform: scale(1);
+}
+
+body .index section:nth-of-type(2) article > button {
+  display: none;
+}
+
+body .index section:nth-of-type(2) article.expanded button {
+  display: block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  line-height: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  z-index: 9999;
+}
+
+body .index section:nth-of-type(2) article.expanded button:hover {
+  opacity: 0.8;
 }
 
 @keyframes zoomIn {
