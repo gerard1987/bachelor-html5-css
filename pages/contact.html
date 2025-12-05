@@ -17,7 +17,7 @@
   <main class="contact">
     <div class="full-width-container">
       <section class="map">
-        <gmp-map center="52.611453591703985, 4.6976972960347485" zoom="18" map-id="map" style="min-block-size: 400px">
+        <gmp-map center="52.611453591703985, 4.6976972960347485" zoom="18" map-id="map">
           <gmp-advanced-marker position="52.611453591703985, 4.6976972960347485"
             title="Heiloo, NL"></gmp-advanced-marker>
         </gmp-map>
@@ -31,7 +31,7 @@
         </p>
 
         <!-- Contact form -->
-        <form id="contactForm" action="https://jkorpela.fi/cgi-bin/echo.cgi" method="post">
+        <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="post">
           <fieldset>
             <label for="name">Naam</label>
             <input type="text" id="name" name="name" autocomplete="name" placeholder="Voor- en achternaam" required>

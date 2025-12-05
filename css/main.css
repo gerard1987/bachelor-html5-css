@@ -73,9 +73,10 @@ body p {
 }
 
 body hr {
-  color: var(--main-fg-color);
-  margin-block: 0.5em;
-  margin-inline: auto;
+    color: var(--main-fg-color);
+    margin-block: 0.5em;
+    margin-inline: auto;
+    border-width: 0.1em;
 }
 
 body ul {
@@ -117,7 +118,7 @@ body .full-width-container picture img {
   inline-size: 100%;
   block-size: 100%;
   object-position: center;
-  max-height: 400px;
+  max-block-size: 25em;
 }
 
 body .container {
@@ -125,7 +126,7 @@ body .container {
   grid-column: 2 / 12;
   grid-template-columns: repeat(12, 1fr);
   justify-self: center;
-  gap: 10px;
+  gap: 0.6em;  
   max-inline-size: 1024px;
 }
 
@@ -157,9 +158,9 @@ body figure figcaption {
 
 body .card {
   background-color: var(--card-bg-color);
-  padding: 12px;
-  box-shadow: 2px 2px 6px #59815d;
-  border: 1px solid #59815d;
+  padding: 0.75em;
+  box-shadow: 0.125em 0.125em 0.375em #59815d;
+  border: 0.0625em solid #59815d;
 }
 
 body footer {
@@ -167,135 +168,17 @@ body footer {
   grid-column: 2 / 12;
   display: grid;
   justify-self: center;
-  grid-template-columns: repeat(1, minmax(150px, 1024px));
+  grid-template-columns: repeat(1, minmax(9.375em, 1024px));
 }
 
+/** INDEX **/
 body .index .container section {
   display: grid;
   grid-column: 1 / -1;
-  gap: 10px;
+  gap: 0.6em;
 }
 
-body .sport table {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-
-body .sport table thead {
-  position: absolute;
-  top: -100%;
-}
-
-body .sport table tbody {
-  display: block;
-}
-
-body .sport table tbody tr {
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border: 1px solid var(--main-border-color);
-  border-radius: 8px;
-  background: var(--main-bg-color);
-  text-align: left;
-  /* Mobile labels */
-}
-
-body .sport table tbody tr th,
-body .sport table tbody tr td {
-  display: block;
-  padding: 0.25rem 0;
-  font-weight: 300;
-}
-
-body .sport table tbody tr th::before,
-body .sport table tbody tr td::before {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 2px;
-}
-
-body .sport table tbody tr th[scope="row"]::before {
-  content: "V-scale";
-}
-
-body .sport table tbody tr td:nth-of-type(1)::before {
-  content: "Fontainebleau";
-}
-
-body .sport table tbody tr td:nth-of-type(2)::before {
-  content: "Moeilijkheidsgraad";
-}
-
-body .contact form label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.35em;
-}
-
-body .contact form input,
-body .contact form textarea,
-body .contact form select {
-  padding: 0.6em;
-  border: 1px solid var(--input-bg-color);
-  border-radius: 8px;
-  font-size: 1em;
-  background: var(--input-bg-color);
-  color: var(--input-fg-color);
-  inline-size: 100%;
-}
-
-body .contact form input[type="checkbox"] {
-  inline-size: auto;
-}
-
-body .contact form input::placeholder {
-  color: var(--input-fg-color);
-}
-
-body .contact form textarea {
-  min-height: 140px;
-  resize: vertical;
-}
-
-body .contact form fieldset {
-  border: none;
-  margin: 0px;
-  padding-block: 10px 0px;
-  padding-inline: 0px;
-}
-
-body .contact form .checkbox {
-  display: flex;
-  font-size: 0.8em;
-}
-
-body .contact form button {
-  color: var(--input-fg-color);
-  padding: 0.65rem 1em;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  background: var(--input-bg-color);
-  border: 1px solid var(--input-fg-color);
-}
-
-body .contact form button:hover {
-  background: var(--main-bg-color);
-}
-
-body .contact form button[disabled] {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-body .contact address {
-  margin-block-start: 0.5em;
-}
-
-body .index > section:nth-of-type(2) article {
+body .index .container > section:nth-of-type(2) article  {
   position: relative;
   cursor: zoom-in;
   transition: transform 0.3s ease;
@@ -307,10 +190,10 @@ body .index > section:nth-of-type(2) article img {
 
 body .index > section:nth-of-type(2) article.expanded {
   position: fixed;
-  inset: 0;
+  inset: 0em;
   background: rgba(0, 0, 0, 0.85);
-  padding: 0;
-  margin: 0;
+  padding: 0em;
+  margin: 0em;
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -322,7 +205,7 @@ body .index > section:nth-of-type(2) article.expanded {
 body .index section:nth-of-type(2) article.expanded picture img {
   max-width: 90vw;
   max-height: 90vh;
-  animation: zoomIn 0.3s ease forwards;
+  animation: zoomIn 0.6s ease forwards;
 }
 
 body .index section:nth-of-type(2) article picture img {
@@ -351,6 +234,130 @@ body .index section:nth-of-type(2) article.expanded button:hover {
   opacity: 0.8;
 }
 
+/** SPORT **/
+body .sport table {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+body .sport table thead {
+  position: absolute;
+  top: -100%;
+}
+
+body .sport table tbody {
+  display: block;
+}
+
+body .sport table tbody tr {
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 0.0625em solid var(--main-border-color);
+  border-radius: 0.5em;
+  background: var(--main-bg-color);
+  text-align: left;
+}
+
+body .sport table tbody tr th,
+body .sport table tbody tr td {
+  display: block;
+  padding: 0.25rem 0;
+  font-weight: 300;
+}
+
+body .sport table tbody tr th::before,
+body .sport table tbody tr td::before {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.125em;
+}
+
+body .sport table tbody tr th[scope="row"]::before {
+  content: "V-scale";
+}
+
+body .sport table tbody tr td:nth-of-type(1)::before {
+  content: "Fontainebleau";
+}
+
+body .sport table tbody tr td:nth-of-type(2)::before {
+  content: "Moeilijkheidsgraad";
+}
+
+/** CONTACT **/
+body .contact .full-width-container gmp-map {
+    block-size: 25em;
+}
+
+body .contact form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35em;
+}
+
+body .contact form input,
+body .contact form textarea,
+body .contact form select {
+  padding: 0.6em;
+  border: 0.0625em solid var(--input-bg-color);
+  border-radius: 0.5em;
+  font-size: 1em;
+  background: var(--input-bg-color);
+  color: var(--input-fg-color);
+  inline-size: 100%;
+}
+
+body .contact form input[type="checkbox"] {
+  inline-size: auto;
+}
+
+body .contact form input::placeholder {
+  color: var(--input-fg-color);
+}
+
+body .contact form textarea {
+  min-height: 8.75em;
+  resize: vertical;
+}
+
+body .contact form fieldset {
+  border: none;
+  margin: 0em;
+  padding-block: 0.625em 0em;
+  padding-inline: 0em;
+}
+
+body .contact form .checkbox {
+  display: flex;
+  font-size: 0.8em;
+}
+
+body .contact form button {
+  color: var(--input-fg-color);
+  padding: 0.65rem 1em;
+  border-radius: 0.625em;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--input-bg-color);
+  border: 0.0625em solid var(--input-fg-color);
+}
+
+body .contact form button:hover {
+  background: var(--main-bg-color);
+}
+
+body .contact form button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+body .contact address {
+  margin-block-start: 0.5em;
+}
+
 /** Keyframes **/
 
 @keyframes zoomIn {
@@ -366,7 +373,7 @@ body .index section:nth-of-type(2) article.expanded button:hover {
 }
 
 /** Media queries **/
-@media screen and (min-width: 0px) {
+@media screen and (min-width: 0em) {
   body header {
     position: relative;
     display: flex;
@@ -383,8 +390,8 @@ body .index section:nth-of-type(2) article.expanded button:hover {
     content: "Bouldering";
     position: absolute;
     color: var(--main-fg-color);
-    font-size: 16px;
-    margin-block: 40px;
+    font-size: 1em;
+    margin-block: 2.5em;
   }
 
   body header nav {
@@ -392,22 +399,23 @@ body .index section:nth-of-type(2) article.expanded button:hover {
     inline-size: 100%;
     background: white;
     padding: 1em;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 0.5em;
+    box-shadow: 0em 0.125em 0.375em rgba(0, 0, 0, 0.15);
     flex-direction: column;
   }
 
   body header nav a {
-    block-size: 30px;
+    block-size: 1.875em;
   }
 
   body header nav.open {
     display: flex;
     position: absolute;
-    margin-block-start: 90px;
+    margin-block-start: 5.625em;
     z-index: 999;
   }
 
+  /** INDEX **/
   body .index {
     gap: 1em 0em;
   }
@@ -426,6 +434,7 @@ body .index section:nth-of-type(2) article.expanded button:hover {
     object-position: center;
   }
 
+  /** INDOOR **/
   body .indoor section {
     grid-column: 1 / -1;
   }
@@ -440,6 +449,7 @@ body .index section:nth-of-type(2) article.expanded button:hover {
     object-fit: cover;
   }
 
+  /** OUTDOOR **/
   body .outdoor section {
     grid-column: 1 / span 12;
   }
@@ -451,9 +461,10 @@ body .index section:nth-of-type(2) article.expanded button:hover {
   body .outdoor section:first-of-type img {
     inline-size: 100%;
     block-size: auto;
-    border-radius: 6px;
+    border-radius: 0.375em;
   }
 
+  /** SPORT **/
   body .sport section:first-of-type {
     grid-row: 1;
     grid-column: 1 / -1;
@@ -464,6 +475,7 @@ body .index section:nth-of-type(2) article.expanded button:hover {
     grid-column: 1 / -1;
   }
 
+  /** GEAR **/
   body .gear aside {
     grid-column: 1 / span 12;
   }
@@ -471,7 +483,7 @@ body .index section:nth-of-type(2) article.expanded button:hover {
   body .gear aside img {
     inline-size: 100%;
     block-size: 100%;
-    border-radius: 6px;
+    border-radius: 0.375em;
     object-fit: cover;
     min-inline-size: 100%;
   }
@@ -480,6 +492,7 @@ body .index section:nth-of-type(2) article.expanded button:hover {
     grid-column: 1 / span 12;
   }
 
+  /** CONTACT **/
   body .contact {
     gap: 1.25em;
   }
@@ -493,7 +506,7 @@ body .index section:nth-of-type(2) article.expanded button:hover {
   body header {
     display: grid;
     grid-template-columns: minmax(20%, calc(1024px / 100 * 20)) minmax(80%, calc(1024px / 100 * 80));
-    block-size: 100px;
+    block-size: 6.25em;
     justify-self: center;
     max-inline-size: 1024px;
   }
@@ -513,8 +526,8 @@ body .index section:nth-of-type(2) article.expanded button:hover {
     inline-size: auto;
     background: none;
     flex-direction: row;
-    padding: 0px;
-    margin-block: 0px;
+    padding: 0em;
+    margin-block: 0em;
     box-shadow: none;
     align-items: center;
   }
@@ -523,12 +536,12 @@ body .index section:nth-of-type(2) article.expanded button:hover {
     display: flex;
     justify-content: space-evenly;
     list-style: none;
-    padding: 0;
-    margin: 0;
+    padding: 0em;
+    margin: 0em;
   }
 
   body header nav ul li {
-    margin-inline: 10px;
+    margin-inline: 0.625em;
     block-size: 100%;
   }
 
@@ -546,8 +559,8 @@ body .index section:nth-of-type(2) article.expanded button:hover {
 
   body header nav ul .dropdown ul li a {
     display: block;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    padding: 5px 10px;
+    box-shadow: 0 0.125em 0.375em rgba(0, 0, 0, 0.15);
+    padding: 0.3125em 0.625em;
     background-color: var(--main-bg-color);
   }
 
@@ -560,8 +573,9 @@ body .index section:nth-of-type(2) article.expanded button:hover {
     margin: 0;
   }
 
+  /** INDEX **/
   body .index .container section:nth-child(1) {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(9.375em, 1fr));
   }
 
   body .index .container section:nth-child(2) article:nth-child(1) {
@@ -607,12 +621,14 @@ body .index section:nth-of-type(2) article.expanded button:hover {
     width: 50%;
   }
 
-  body .index .container section:nth-child(3) article a {
+  body .index .container article:not(.expanded) picture {
     position: relative;
+    display: flex;
+    inline-size: 100%;
   }
 
-  body .index .container section:nth-child(3) article a::after {
-    content: "";
+  body .index .container article picture::after {
+    content: ""; 
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
@@ -620,10 +636,11 @@ body .index section:nth-of-type(2) article.expanded button:hover {
     transition: opacity 0.3s ease;
   }
 
-  body .index .container section:nth-child(3) article a:hover::after {
+  body .index .container article:not(.expanded) picture:hover::after {
     opacity: 1;
   }
 
+  /** INDOOR **/
   body .indoor section:first-of-type {
     grid-row: 1;
     grid-column: 1 / span 7;
@@ -638,10 +655,11 @@ body .index section:nth-of-type(2) article.expanded button:hover {
     grid-column: 8 / -1;
   }
 
+  /** OUTDOOR **/
   body .outdoor section:nth-of-type(1) img {
     inline-size: 100%;
     block-size: auto;
-    border-radius: 6px;
+    border-radius: 0.375em;
   }
 
   body .outdoor section:nth-of-type(2) {
@@ -652,6 +670,7 @@ body .index section:nth-of-type(2) article.expanded button:hover {
     grid-column: 7 / span 6;
   }
 
+  /** SPORT **/
   body .sport table {
     display: table;
     border-collapse: collapse;
@@ -669,7 +688,7 @@ body .index section:nth-of-type(2) article.expanded button:hover {
   body .sport table thead th {
     padding: 0.5em;
     text-align: left;
-    border-bottom: 2px solid #333;
+    border-bottom: 0.125em solid #333;
     font-weight: 700;
   }
 
@@ -692,7 +711,7 @@ body .index section:nth-of-type(2) article.expanded button:hover {
   body .sport table tbody tr th,
   body .sport table tbody tr td {
     display: table-cell;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 0.0625em solid #ddd;
     padding: 0.5em;
   }
 
@@ -701,6 +720,7 @@ body .index section:nth-of-type(2) article.expanded button:hover {
     content: none !important;
   }
 
+  /** GEAR **/
   body .gear aside {
     grid-column: 1 / span 12;
   }
@@ -713,6 +733,7 @@ body .index section:nth-of-type(2) article.expanded button:hover {
     grid-column: 7 / span 6;
   }
 
+  /** CONTACT **/  
   body .contact section:first-of-type {
     grid-column: 1 / -1;
   }
@@ -727,6 +748,7 @@ body .index section:nth-of-type(2) article.expanded button:hover {
 }
 
 @media screen and (min-width: 1024px) {
+  /** INDEX **/
   body .index .container section:nth-child(2) {
     grid-template-columns: repeat(5, 1fr);
   }
@@ -736,7 +758,7 @@ body .index section:nth-of-type(2) article.expanded button:hover {
   }
 
   body .index .container section:nth-child(3) {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(9.375em, 1fr));
   }
 
   body .index .container section:nth-child(3) article {
@@ -762,7 +784,7 @@ body .index section:nth-of-type(2) article.expanded button:hover {
   body .index .container section:nth-child(3) article:nth-child(2) {
     flex-direction: column;
   }
-
+  /** SPORT **/
   body .sport section:first-of-type {
     grid-row: 1;
     grid-column: 1 / 6;
@@ -773,6 +795,7 @@ body .index section:nth-of-type(2) article.expanded button:hover {
     grid-column: 6 / -1;
   }
 
+  /** GEAR **/
   body .gear aside {
     grid-column: 1 / span 4;
   }
