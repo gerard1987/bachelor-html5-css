@@ -44,7 +44,7 @@ function renderComponent(component) {
 }
 
 function setHeaderActiveLink() {
-  document.querySelectorAll(".main-nav ul li a").forEach((element) => {
+  document.querySelectorAll("#main-nav ul li a").forEach((element) => {
     if (element.pathname.includes(window.location.pathname)) {
       element.classList.add("active");
     }
@@ -53,7 +53,7 @@ function setHeaderActiveLink() {
 
 function toggleResponsiveNav() {
   const toggle = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".main-nav");
+  const nav = document.getElementById("main-nav");
 
   toggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("open");
