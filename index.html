@@ -15,7 +15,7 @@
 <body>
   <header class="component" data-component="header"></header>
   <main class="index">
-    <section class="full-width-container">
+    <div class="full-width-container">
       <section>
         <picture>
           <source media="(max-width: 768px)" srcset="./files/images/boulder-banner-mobile.jpg 768w" sizes="100vw">
@@ -24,9 +24,9 @@
           <img src="./files/images/boulder-banner-desktop.jpg" alt="Boulder competition banner image">
         </picture>
       </section>
-    </section>
+    </div>
 
-    <section class="container">
+    <div class="container">
       <section>
         <article>
           <h2>Boulderen</h2>
@@ -63,7 +63,8 @@
             <source media="(max-width: 768px)" srcset="./files/images/joshue_tree_mobile.jpg 330w" sizes="100vw">
             <source media="(max-width: 1199px)" srcset="./files/images/joshue_tree_tablet.jpg 500w" sizes="100vw">
             <source media="(min-width: 1200px)" srcset="./files/images/joshue_tree_desktop.jpg 960w" sizes="50vw">
-            <img src="./files/images/joshue_tree_desktop.jpg" alt="bouldering in joshua tree">
+            <img src="./files/images/joshue_tree_desktop.jpg"
+              alt="bouldering in joshua tree nationaal park in Californië">
           </picture>
           <button class="overlay-close" aria-label="Close overlay">X</button>
         </article>
@@ -73,7 +74,7 @@
             <source media="(max-width: 768px)" srcset="./files/images/indoor_bouldering_mobile.jpg 330w" sizes="100vw">
             <source media="(max-width: 1199px)" srcset="./files/images/indoor_bouldering_tablet.jpg 500w" sizes="100vw">
             <source media="(min-width: 1200px)" srcset="./files/images/indoor_bouldering_desktop.jpg 960w" sizes="50vw">
-            <img src="./files/images/indoor_bouldering_desktop.jpg" alt="bouldering in a climbing gym">
+            <img src="./files/images/indoor_bouldering_desktop.jpg" alt="bouldering in een indoor boulder gym">
           </picture>
           <button class="overlay-close" aria-label="Close overlay">X</button>
         </article>
@@ -85,25 +86,29 @@
               sizes="100vw">
             <source media="(min-width: 1200px)" srcset="./files/images/outdoor_bouldering-desktop.jpg 960w"
               sizes="50vw">
-            <img src="./files/images/outdoor_bouldering-desktop.jpg" alt="bouldering in joshua tree">
+            <img src="./files/images/outdoor_bouldering-desktop.jpg" alt="Man is aan het boulderen op een rots buiten">
           </picture>
           <button class="overlay-close" aria-label="Close overlay">X</button>
         </article>
 
         <article>
-          <video controls>
-            <source src="./files/videos/outside-bouldering.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <figure>
+            <video controls aria-label="outside-bouldering.mp4">
+              <source src="./files/videos/outside-bouldering.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
           <button class="overlay-close" aria-label="Close overlay">X</button>
         </article>
 
         <article>
-          <video controls>
-            <source src="https://videos.pexels.com/video-files/17252449/17252449-uhd_2560_1440_30fps.mp4"
-              type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <figure>
+            <video controls aria-label="17252449-uhd_2560_1440_30fps.mp4">
+              <source src="https://videos.pexels.com/video-files/17252449/17252449-uhd_2560_1440_30fps.mp4"
+                type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
           <button class="overlay-close" aria-label="Close overlay">X</button>
         </article>
       </section>
@@ -173,7 +178,7 @@
         </article>
 
       </section>
-    </section>
+    </div>
   </main>
 
   <footer class="component" data-component="footer"></footer>

@@ -73,10 +73,10 @@ body p {
 }
 
 body hr {
-    color: var(--main-fg-color);
-    margin-block: 0.5em;
-    margin-inline: auto;
-    border-width: 0.1em;
+  color: var(--main-fg-color);
+  margin-block: 0.5em;
+  margin-inline: auto;
+  border-width: 0.1em;
 }
 
 body ul {
@@ -126,7 +126,7 @@ body .container {
   grid-column: 2 / 12;
   grid-template-columns: repeat(12, 1fr);
   justify-self: center;
-  gap: 0.6em;  
+  gap: 0.6em;
   max-inline-size: 1024px;
 }
 
@@ -149,6 +149,7 @@ body figure {
   margin: inherit;
   display: flex;
   flex-flow: column;
+  block-size: 100%;
 }
 
 body figure figcaption {
@@ -178,17 +179,17 @@ body .index .container section {
   gap: 0.6em;
 }
 
-body .index .container > section:nth-of-type(2) article  {
+body .index .container>section:nth-of-type(2) article {
   position: relative;
   cursor: zoom-in;
   transition: transform 0.3s ease;
 }
 
-body .index > section:nth-of-type(2) article img {
+body .index>section:nth-of-type(2) article img {
   transition: transform 0.3s ease;
 }
 
-body .index > section:nth-of-type(2) article.expanded {
+body .index>section:nth-of-type(2) article.expanded {
   position: fixed;
   inset: 0em;
   background: rgba(0, 0, 0, 0.85);
@@ -289,7 +290,7 @@ body .sport table tbody tr td:nth-of-type(2)::before {
 
 /** CONTACT **/
 body .contact .full-width-container gmp-map {
-    block-size: 25em;
+  block-size: 25em;
 }
 
 body .contact form label {
@@ -328,6 +329,10 @@ body .contact form fieldset {
   margin: 0em;
   padding-block: 0.625em 0em;
   padding-inline: 0em;
+}
+
+body .contact form fieldset>div {
+  margin-block: 0.6em;
 }
 
 body .contact form .checkbox {
@@ -497,7 +502,7 @@ body .contact address {
     gap: 1.25em;
   }
 
-  body .contact section {
+  body .contact article {
     grid-column: 1 / -1;
   }
 }
@@ -628,7 +633,7 @@ body .contact address {
   }
 
   body .index .container article picture::after {
-    content: ""; 
+    content: "";
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
@@ -733,21 +738,22 @@ body .contact address {
     grid-column: 7 / span 6;
   }
 
-  /** CONTACT **/  
-  body .contact section:first-of-type {
+  /** CONTACT **/
+  body .contact .full-width-container>article:first-of-type {
     grid-column: 1 / -1;
   }
 
-  body .contact .container section:first-of-type {
+  body .contact .container>article:first-of-type {
     grid-column: 1 / 8;
   }
 
-  body .contact .container section:last-of-type {
+  body .contact .container>article:last-of-type {
     grid-column: 8 / -1;
   }
 }
 
 @media screen and (min-width: 1024px) {
+
   /** INDEX **/
   body .index .container section:nth-child(2) {
     grid-template-columns: repeat(5, 1fr);
@@ -784,6 +790,7 @@ body .contact address {
   body .index .container section:nth-child(3) article:nth-child(2) {
     flex-direction: column;
   }
+
   /** SPORT **/
   body .sport section:first-of-type {
     grid-row: 1;

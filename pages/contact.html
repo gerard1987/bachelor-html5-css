@@ -16,100 +16,97 @@
   <header class="component" data-component="header"></header>
   <main class="contact">
     <div class="full-width-container">
-      <section class="map">
-        <gmp-map center="52.611453591703985, 4.6976972960347485" zoom="18" map-id="map">
-          <gmp-advanced-marker position="52.611453591703985, 4.6976972960347485"
-            title="Heiloo, NL"></gmp-advanced-marker>
-        </gmp-map>
-      </section>
+      <gmp-map center="52.611453591703985, 4.6976972960347485" zoom="18" map-id="map">
+        <gmp-advanced-marker position="52.611453591703985, 4.6976972960347485" title="Heiloo, NL"></gmp-advanced-marker>
+      </gmp-map>
     </div>
     <div class="container">
-      <section class="card" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Neem contact met ons op</h2>
-        <p>
-          Vul onderstaand formulier in en we nemen zo snel mogelijk contact op.
-        </p>
+      <article class="card">
+        <h2>Neem contact met ons op</h2>
 
         <!-- Contact form -->
         <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="post">
           <fieldset>
-            <label for="name">Naam</label>
-            <input type="text" id="name" name="name" autocomplete="name" placeholder="Voor- en achternaam" required>
-          </fieldset>
+            <legend>Vul onderstaand formulier in en we nemen zo snel mogelijk contact op.</legend>
+            
+            <div>
+              <label for="name" id="name-label">Naam</label>
+              <input type="text" id="name" name="name" autocomplete="name" placeholder="Voor- en achternaam"
+                aria-labelledby="name-label" required>
+            </div>
 
-          <fieldset>
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required autocomplete="email" placeholder="naam@voorbeeld.nl">
-          </fieldset>
+            <div>
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="naam@voorbeeld.nl">
+            </div>
 
-          <fieldset>
-            <label for="phone">Telefoon (optioneel)</label>
-            <input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78"
-              pattern="^(?:\+31|0)(?:\s|-)?(?:6\d{8}|[1-9]\d(?:\s|-)?\d{6,7})$" maxlength="15">
-          </fieldset>
+            <div>
+              <label for="phone">Telefoon (optioneel)</label>
+              <input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78"
+                pattern="^(?:\+31|0)(?:\s|-)?(?:6\d{8}|[1-9]\d(?:\s|-)?\d{6,7})$" maxlength="15">
+            </div>
 
-          <fieldset>
-            <label for="message">Bericht</label>
-            <textarea id="message" name="message" required
-              placeholder="Schrijf hier je bericht... (maximaal 250 tekens)" maxlength="250"></textarea>
+            <div>
+              <label for="message">Bericht</label>
+              <textarea id="message" name="message" required
+                placeholder="Schrijf hier je bericht... (maximaal 250 tekens)" maxlength="250"></textarea>
+            </div>
           </fieldset>
 
           <fieldset class="checkbox">
+            <legend>Ga akkoord met het gebruik van je gegevens</legend>
             <label for="consent">
-              <sub>Ik ga akkoord met het gebruik van mijn gegevens conform de
-                <a href="#">privacypolicy</a>.</sub></label>
+              <sub>Ik ga akkoord met het gebruik van mijn gegevens</sub></label>
             <input type="checkbox" id="consent" name="consent" required>
           </fieldset>
 
           <fieldset class="actions">
-            <button type="submit">Verstuur</button>
+            <button type="submit" aria-label="submit form">Verstuur</button>
           </fieldset>
         </form>
-      </section>
+      </article>
 
-      <section class="card">
-        <aside>
-          <h2>Onze gegevens</h2>
-          <address>
-            <strong>Boulderhal Rots B.V.</strong>
-            <p>Dorpstraat 1</p>
-            <p>1234 AB Amsterdam</p>
-          </address>
-          <p>Tel: <a href="tel:+31123456789">+31 12 345 6789</a></p>
-          <p>E-mail: <a href="mailto:info@boulderhalrots.nl">info@boulderhalrots.nl</a></p>
+      <article class="card">
+        <h2>Onze gegevens</h2>
+        <p><strong>Boulderhal Rots B.V.</strong></p>
+        <address>
+          <p>Dorpstraat 1</p>
+          <p>1234 AB Amsterdam</p>
+        </address>
+        <p>Tel: <a href="tel:+31123456789">+31 12 345 6789</a></p>
+        <p>E-mail: <a href="mailto:info@boulderhalrots.nl">info@boulderhalrots.nl</a></p>
 
-          <h3>Openingsuren</h3>
-          <ul>
-            <li>
-              <p>Ma: 09:00 — 17:30 </p>
-            </li>
-            <li>
-              <p>Di: 09:00 — 17:30 </p>
-            </li>
-            <li>
-              <p>Wo: 09:00 — 17:30 </p>
-            </li>
-            <li>
-              <p>Do: 09:00 — 17:30 </p>
-            </li>
-            <li>
-              <p>Vr: 09:00 — 17:30 </p>
-            </li>
-            <li>
-              <p>Za: Gesloten</p>
-            </li>
-            <li>
-              <p>Zo: Gesloten</p>
-            </li>
-          </ul>
+        <h3>Openingsuren</h3>
+        <ul>
+          <li>
+            <p>Ma: 09:00 — 17:30 </p>
+          </li>
+          <li>
+            <p>Di: 09:00 — 17:30 </p>
+          </li>
+          <li>
+            <p>Wo: 09:00 — 17:30 </p>
+          </li>
+          <li>
+            <p>Do: 09:00 — 17:30 </p>
+          </li>
+          <li>
+            <p>Vr: 09:00 — 17:30 </p>
+          </li>
+          <li>
+            <p>Za: Gesloten</p>
+          </li>
+          <li>
+            <p>Zo: Gesloten</p>
+          </li>
+        </ul>
 
-          <h3>Route</h3>
-          <p>
-            Klik op de kaart bovenaan om de exacte locatie te bekijken of gebruik
-            de Google Maps knop om routebeschrijving te starten.
-          </p>
-        </aside>
-      </section>
+        <h3>Route</h3>
+        <p>
+          Klik op de kaart bovenaan om de exacte locatie te bekijken of gebruik
+          de Google Maps knop om routebeschrijving te starten.
+        </p>
+      </article>
     </div>
   </main>
   <footer class="component" data-component="footer"></footer>
