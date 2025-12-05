@@ -185,11 +185,11 @@ body .index .container>section:nth-of-type(2) article {
   transition: transform 0.3s ease;
 }
 
-body .index>section:nth-of-type(2) article img {
+body .index .container > section:nth-of-type(2) article img {
   transition: transform 0.3s ease;
 }
 
-body .index>section:nth-of-type(2) article.expanded {
+body .index .container > section:nth-of-type(2) article.expanded {
   position: fixed;
   inset: 0em;
   background: rgba(0, 0, 0, 0.85);
