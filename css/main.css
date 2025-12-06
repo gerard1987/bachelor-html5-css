@@ -518,8 +518,10 @@ body .contact address {
     gap: 1.25em;
   }
 
-  body .contact article {
+  body .contact .container > ul {
+    display: grid;
     grid-column: 1 / -1;
+    gap: 0.6em;
   }
 }
 
@@ -770,12 +772,8 @@ body .contact address {
     grid-column: 1 / -1;
   }
 
-  body .contact .container > article:first-of-type {
-    grid-column: 1 / 8;
-  }
-
-  body .contact .container > article:last-of-type {
-    grid-column: 8 / -1;
+  body .contact .container > ul {
+    grid-template-columns: 8fr 4fr;
   }
 }
 
