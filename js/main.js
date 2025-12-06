@@ -69,24 +69,24 @@ function addGalleryListeners() {
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
-      document.querySelectorAll("section article.expanded")
+      document.querySelectorAll("body .index .container > section:first-of-type  > ul > li.expanded")
         .forEach(a => a.classList.remove("expanded"));
     }
   });
 
-  document.querySelectorAll("body .index .container section:nth-child(2) article").forEach(article => {
-    article.addEventListener("click", (e) => {
-      const isExpanded = article.classList.contains("expanded");
+  document.querySelectorAll("body .index .container > section:first-of-type  > ul > li").forEach(galleryItem => {
+    galleryItem.addEventListener("click", (e) => {
+      const isExpanded = galleryItem.classList.contains("expanded");
 
       if (isExpanded) {
-        article.classList.remove("expanded");
+        galleryItem.classList.remove("expanded");
         return;
       }
 
-      document.querySelectorAll("section article.expanded")
+      document.querySelectorAll("body .index .container > section:first-of-type  > ul > li.expanded")
         .forEach(a => a.classList.remove("expanded"));
 
-      article.classList.add("expanded");
+      galleryItem.classList.add("expanded");
     });
   });
 }

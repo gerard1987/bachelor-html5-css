@@ -1,6 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -117,6 +116,16 @@ body .full-width-container {
   grid-column: 1 / -1;
 }
 
+body .full-width-container > ul,
+body .container > ul,
+body .container > section:first-of-type > ul {
+  list-style: none;
+  margin-block: 0em;
+  margin-inline: 0em;
+  padding-inline: 0em;
+  padding-block: 0em;
+}
+
 body .full-width-container picture img {
   object-fit: cover;
   inline-size: 100%;
@@ -177,23 +186,26 @@ body footer {
 }
 
 /** INDEX **/
-body .index .container section {
-  display: grid;
-  grid-column: 1 / -1;
-  gap: 0.6em;
-}
-
-body .index .container>section:nth-of-type(2) article {
+body .index .container > section:first-of-type > ul li {
   position: relative;
   cursor: zoom-in;
   transition: transform 0.3s ease;
 }
 
-body .index .container>section:nth-of-type(2) article img {
+body .index .container > section:first-of-type > ul li img {
   transition: transform 0.3s ease;
 }
 
-body .index .container>section:nth-of-type(2) article.expanded {
+body .index .container > section:first-of-type  > ul li picture img {
+  transform: scale(1);
+}
+
+body .index .container > section:first-of-type  > ul > li > button {
+  display: none;
+}
+
+/* Expanded */
+body .index .container > section:first-of-type  > ul li.expanded {
   position: fixed;
   inset: 0em;
   background: rgba(0, 0, 0, 0.85);
@@ -207,21 +219,15 @@ body .index .container>section:nth-of-type(2) article.expanded {
   overflow: hidden;
 }
 
-body .index section:nth-of-type(2) article.expanded picture img {
+body .index .container > section:first-of-type  > ul li.expanded picture img,
+body .index .container > section:first-of-type  > ul li.expanded video {
   max-inline-size: 90vw;
   max-block-size: 90vh;
   animation: zoomIn 0.6s ease forwards;
+  margin-block: auto;
 }
 
-body .index section:nth-of-type(2) article picture img {
-  transform: scale(1);
-}
-
-body .index section:nth-of-type(2) article>button {
-  display: none;
-}
-
-body .index section:nth-of-type(2) article.expanded button {
+body .index .container > section:first-of-type  > ul > li.expanded button {
   display: block;
   position: absolute;
   inset-block-start: 1em;
@@ -235,7 +241,7 @@ body .index section:nth-of-type(2) article.expanded button {
   z-index: 9999;
 }
 
-body .index section:nth-of-type(2) article.expanded button:hover {
+body .index .container > section:first-of-type  > ul > li.expanded button:hover {
   opacity: 0.8;
 }
 
@@ -335,7 +341,7 @@ body .contact form fieldset {
   padding-inline: 0em;
 }
 
-body .contact form fieldset>div {
+body .contact form fieldset > div {
   margin-block: 0.6em;
 }
 
@@ -441,6 +447,15 @@ body .contact address {
     inline-size: 100%;
     object-fit: cover;
     object-position: center;
+    z-index: -1;
+  }
+
+  body .index .container > ul,
+  body .index .container > section:first-of-type,
+  body .index .container > section:first-of-type > ul {
+    display: grid;
+    grid-column: 1 / -1;
+    gap: 0.6em;
   }
 
   /** INDOOR **/
@@ -511,9 +526,12 @@ body .contact address {
 }
 
 @media screen and (min-width: 768px) {
-  body>header {
+  body > header {
     display: grid;
-    grid-template-columns: minmax(20%, calc(1024px / 100 * 20)) minmax(80%, calc(1024px / 100 * 80));
+    grid-template-columns: minmax(20%, calc(1024px / 100 * 20)) minmax(
+        80%,
+        calc(1024px / 100 * 80)
+      );
     block-size: 6.25em;
     justify-self: center;
     max-inline-size: 1024px;
@@ -582,60 +600,60 @@ body .contact address {
   }
 
   /** INDEX **/
-  body .index .container section:nth-child(1) {
+  body .index .container > ul:first-of-type {
     grid-template-columns: repeat(auto-fit, minmax(9.375em, 1fr));
   }
 
-  body .index .container section:nth-child(2) article:nth-child(1) {
+  body .index .container > section:first-of-type > ul li:nth-child(1) {
     grid-column: 1 / span 4;
   }
 
-  body .index .container section:nth-child(2) article:nth-child(2) {
+  body .index .container > section:first-of-type > ul li:nth-child(2) {
     grid-column: 5 / span 4;
   }
 
-  body .index .container section:nth-child(2) article:nth-child(3) {
+  body .index .container > section:first-of-type > ul li:nth-child(3) {
     grid-column: 9 / span 4;
   }
 
-  body .index .container section:nth-child(2) article:nth-child(4) {
+  body .index .container > section:first-of-type > ul li:nth-child(4) {
     grid-column: 1 / span 6;
   }
 
-  body .index .container section:nth-child(2) article:nth-child(5) {
+  body .index .container > section:first-of-type > ul li:nth-child(5) {
     grid-column: 7 / span 6;
   }
 
-  body .index .container section:nth-child(3) article {
+  body .index .container > ul:last-of-type > li {
     display: flex;
     flex-wrap: nowrap;
     align-items: flex-start;
   }
 
-  body .index .container section:nth-child(3) article:nth-child(odd) section {
+  body .index .container > ul:last-of-type > li:nth-child(odd) section {
     padding-inline-start: 1em;
   }
 
-  body .index .container section:nth-child(3) article:nth-child(2) {
+  body .index .container > ul:last-of-type > li:nth-child(2) {
     flex-direction: row-reverse;
   }
 
-  body .index .container section:nth-child(3) article:nth-child(2) section {
+  body .index .container > ul:last-of-type > li:nth-child(2) section {
     padding-inline-end: 1em;
   }
 
-  body .index .container section:nth-child(3) article a,
-  body .index .container section:nth-child(3) article section {
+  body .index .container > ul:last-of-type > li a,
+  body .index .container > ul:last-of-type > li section {
     inline-size: 50%;
   }
 
-  body .index .container article:not(.expanded) picture {
+  body .index .container li:not(.expanded) picture {
     position: relative;
     display: flex;
     inline-size: 100%;
   }
 
-  body .index .container article picture::after {
+  body .index .container li picture::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -644,7 +662,7 @@ body .contact address {
     transition: opacity 0.3s ease;
   }
 
-  body .index .container article:not(.expanded) picture:hover::after {
+  body .index .container li:not(.expanded) picture:hover::after {
     opacity: 1;
   }
 
@@ -742,55 +760,54 @@ body .contact address {
   }
 
   /** CONTACT **/
-  body .contact .full-width-container>article:first-of-type {
+  body .contact .full-width-container > article:first-of-type {
     grid-column: 1 / -1;
   }
 
-  body .contact .container>article:first-of-type {
+  body .contact .container > article:first-of-type {
     grid-column: 1 / 8;
   }
 
-  body .contact .container>article:last-of-type {
+  body .contact .container > article:last-of-type {
     grid-column: 8 / -1;
   }
 }
 
 @media screen and (min-width: 1024px) {
-
   /** INDEX **/
-  body .index .container section:nth-child(2) {
+  body .index .container > section:first-of-type > ul {
     grid-template-columns: repeat(5, 1fr);
   }
 
-  body .index .container section:nth-child(2) article {
+  body .index .container > section:first-of-type > ul > li {
     grid-column: auto !important;
   }
 
-  body .index .container section:nth-child(3) {
+  body .index .container ul:last-of-type {
     grid-template-columns: repeat(auto-fit, minmax(9.375em, 1fr));
   }
 
-  body .index .container section:nth-child(3) article {
+  body .index .container > ul:last-of-type > li {
     flex-wrap: wrap;
     align-items: flex-start;
     flex-direction: column;
   }
 
-  body .index .container section:nth-child(3) article a,
-  body .index .container section:nth-child(3) article section {
+  body .index .container > ul:last-of-type > li a,
+  body .index .container > ul:last-of-type > li section {
     inline-size: 100%;
     display: block;
   }
 
-  body .index .container section:nth-child(3) article:nth-child(odd) section {
+  body .index .container > ul:last-of-type > li:nth-child(odd) section {
     padding-inline-start: 0em;
   }
 
-  body .index .container section:nth-child(3) article:nth-child(2) section {
+  body .index .container > ul:last-of-type > li:nth-child(2) section {
     padding-inline-end: 0em;
   }
 
-  body .index .container section:nth-child(3) article:nth-child(2) {
+  body .index .container > ul:last-of-type > li:nth-child(2) {
     flex-direction: column;
   }
 
@@ -814,7 +831,7 @@ body .contact address {
     grid-column: 5 / span 8;
   }
 
-  body .gear section:nth-child(n+3) {
+  body .gear section:nth-child(n + 3) {
     grid-column: 1 / span 12;
   }
 
