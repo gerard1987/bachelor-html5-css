@@ -496,8 +496,14 @@ body .contact address {
   }
 
   /** GEAR **/
-  body .gear aside {
-    grid-column: 1 / span 12;
+  body .gear .container > ul {
+    display: grid;
+    grid-column: 1 / -1;
+    gap: 0.6em;
+  }
+  body .gear .container > ul,
+  body .gear .container > ul > li {
+    grid-column: 1 / -1;
   }
 
   body .gear aside img {
@@ -505,10 +511,6 @@ body .contact address {
     block-size: 100%;
     border-radius: 0.375em;
     object-fit: cover;
-  }
-
-  body .gear section {
-    grid-column: 1 / span 12;
   }
 
   /** CONTACT **/
@@ -678,7 +680,7 @@ body .contact address {
   }
 
   /** OUTDOOR **/
-    body .outdoor .container > ul {
+  body .outdoor .container > ul {
     display: grid;
     grid-column: 1 / -1;
     gap: 0.6em;
@@ -696,7 +698,7 @@ body .contact address {
   body .sport .container > ul {
     grid-template-columns: 1fr 1.5fr;
   }
-  
+
   body .sport table {
     display: table;
     border-collapse: collapse;
@@ -747,16 +749,20 @@ body .contact address {
   }
 
   /** GEAR **/
-  body .gear aside {
+  body .gear .container > ul > li:first-of-type {
     grid-column: 1 / span 12;
   }
 
-  body .gear section:first-of-type {
+  body .gear .container > ul > li:nth-of-type(2) {
     grid-column: 1 / span 6;
   }
 
-  body .gear section:nth-of-type(2) {
+  body .gear .container > ul > li:nth-of-type(3) {
     grid-column: 7 / span 6;
+  }
+
+  body .gear .container > ul > li:last-of-type {
+    grid-column: 1 / span 12;
   }
 
   /** CONTACT **/
@@ -823,34 +829,34 @@ body .contact address {
   }
 
   /** GEAR **/
-  body .gear aside {
+  body .gear .container > ul > li:first-of-type {
     grid-column: 1 / span 4;
   }
 
-  body .gear section:first-of-type {
+  body .gear .container > ul > li:nth-of-type(2) {
     grid-column: 5 / span 8;
   }
 
-  body .gear section:nth-child(n + 3) {
+  body .gear .container > ul > li:nth-of-type(3) {
     grid-column: 1 / span 12;
   }
 
-  body .gear section:last-of-type {
+  body .gear .container > ul > li:last-of-type {
     display: grid;
     grid-template-columns: 2fr 1fr;
   }
 
-  body .gear section:last-of-type article p {
+  body .gear .container > ul > li:last-of-type article p {
     margin-inline-end: 1em;
   }
 
-  body .gear section:last-of-type aside {
+  body .gear .container > ul > li:last-of-type aside {
     grid-column: 2;
     display: flex;
     align-items: center;
   }
 
-  body .gear section:last-of-type aside img {
+  body .gear .container > ul > li:last-of-type aside img {
     object-fit: contain;
   }
 }
