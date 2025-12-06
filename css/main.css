@@ -472,15 +472,17 @@ body .contact address {
   }
 
   /** OUTDOOR **/
-  body .outdoor article {
+  body .outdoor .container > ul {
+    display: grid;
+    grid-column: 1 / -1;
+    gap: 0.6em;
+  }
+
+  body .outdoor .container > ul > li {
     grid-column: 1 / span 12;
   }
 
-  body .outdoor article:first-of-type {
-    grid-column: 1 / span 12;
-  }
-
-  body .outdoor article:first-of-type img {
+  body .outdoor .container > ul > li:first-of-type img {
     inline-size: 100%;
     block-size: auto;
     border-radius: 0.375em;
@@ -680,17 +682,17 @@ body .contact address {
   }
 
   /** OUTDOOR **/
-  body .outdoor article:nth-of-type(1) img {
-    inline-size: 100%;
-    block-size: auto;
-    border-radius: 0.375em;
+    body .outdoor .container > ul {
+    display: grid;
+    grid-column: 1 / -1;
+    gap: 0.6em;
   }
 
-  body .outdoor article:nth-of-type(2) {
+  body .outdoor .container > ul > li:nth-child(2) {
     grid-column: 1 / span 6;
   }
 
-  body .outdoor article:nth-of-type(3) {
+  body .outdoor .container > ul > li:nth-child(3) {
     grid-column: 7 / span 6;
   }
 
