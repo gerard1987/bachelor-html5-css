@@ -62,7 +62,7 @@ body h1 {
 }
 
 body h2 {
-    font-size: clamp(1.3em, calc(0.875em + 1vw), 1.8em);
+  font-size: clamp(1.3em, calc(0.875em + 1vw), 1.8em);
 }
 
 body h3 {
@@ -196,16 +196,16 @@ body .index .container > section:first-of-type > ul li img {
   transition: transform 0.3s ease;
 }
 
-body .index .container > section:first-of-type  > ul li picture img {
+body .index .container > section:first-of-type > ul li picture img {
   transform: scale(1);
 }
 
-body .index .container > section:first-of-type  > ul > li > button {
+body .index .container > section:first-of-type > ul > li > button {
   display: none;
 }
 
 /* Expanded */
-body .index .container > section:first-of-type  > ul li.expanded {
+body .index .container > section:first-of-type > ul li.expanded {
   position: fixed;
   inset: 0em;
   background: rgba(0, 0, 0, 0.85);
@@ -219,15 +219,15 @@ body .index .container > section:first-of-type  > ul li.expanded {
   overflow: hidden;
 }
 
-body .index .container > section:first-of-type  > ul li.expanded picture img,
-body .index .container > section:first-of-type  > ul li.expanded video {
+body .index .container > section:first-of-type > ul li.expanded picture img,
+body .index .container > section:first-of-type > ul li.expanded video {
   max-inline-size: 90vw;
   max-block-size: 90vh;
   animation: zoomIn 0.6s ease forwards;
   margin-block: auto;
 }
 
-body .index .container > section:first-of-type  > ul > li.expanded button {
+body .index .container > section:first-of-type > ul > li.expanded button {
   display: block;
   position: absolute;
   inset-block-start: 1em;
@@ -241,7 +241,7 @@ body .index .container > section:first-of-type  > ul > li.expanded button {
   z-index: 9999;
 }
 
-body .index .container > section:first-of-type  > ul > li.expanded button:hover {
+body .index .container > section:first-of-type > ul > li.expanded button:hover {
   opacity: 0.8;
 }
 
@@ -459,12 +459,10 @@ body .contact address {
   }
 
   /** INDOOR **/
-  body .indoor section {
+  body .indoor .container > ul {
+    display: grid;
     grid-column: 1 / -1;
-  }
-
-  body .indoor aside {
-    grid-column: 1 / -1;
+    gap: 0.6em;
   }
 
   body .indoor aside img {
@@ -667,18 +665,18 @@ body .contact address {
   }
 
   /** INDOOR **/
-  body .indoor section:first-of-type {
-    grid-row: 1;
-    grid-column: 1 / span 7;
+  body .indoor .container > ul:first-of-type {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: 8fr 4fr;
   }
 
-  body .indoor section:last-of-type {
+  body .indoor .container > ul:first-of-type > li:last-of-type {
+    display: flex;
+  }
+
+  body .indoor .container > ul:last-of-type {
     grid-row: 2;
-  }
-
-  body .indoor aside {
-    grid-row: 1;
-    grid-column: 8 / -1;
   }
 
   /** OUTDOOR **/
