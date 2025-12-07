@@ -442,12 +442,11 @@ body .contact address {
     aspect-ratio: 1 / 1;
   }
 
-  body .index video {
+  body .index .container li:not(.expanded) video {
     block-size: 100%;
     inline-size: 100%;
     object-fit: cover;
     object-position: center;
-    z-index: -1;
   }
 
   body .index .container > ul,
